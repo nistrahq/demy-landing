@@ -4,7 +4,7 @@ export async function loadLanguage(lang) {
         return module.default
     } catch (err) {
         console.error(`Language '${lang}' not found. Falling back to English`);
-        const fallback = await import('../../locales/en.json');
+        const fallback = await import('../../../locales/en.json');
         return fallback.default;
     }
 }
