@@ -1,0 +1,49 @@
+@layer components {
+    .about-us-section {
+        background-color: var(--color-white);
+    }
+
+    .about-us-grid {
+        @apply px-8 md:px-0 gap-16 md:gap-32; /* ajustable */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(120px, max-content)); /* ajustable */
+        }
+    }
+
+    .about-card {
+        @apply flex flex-col items-center text-center;
+    }
+
+    .member-photo {
+        @apply w-auto h-auto mb-4 rounded-full; /* ajustable */
+        /*@apply w-auto h-auto*/
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
+
+    .member-name {
+        @apply font-semibold text-base mb-1;
+        color: var(--color-text);
+    }
+
+    .member-role {
+        @apply text-sm;
+        color: var(--color-muted);
+    }
+
+    .member-socials {
+        @apply flex gap-6 mt-4 md:mt-6;
+    }
+
+    .social-icon {
+        @apply w-6 h-6 text-gray-500 transition-colors duration-200;
+    }
+
+    .member-socials a:hover .social-icon {
+        @apply text-primary;
+    }
+
+}
