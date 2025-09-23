@@ -1,0 +1,135 @@
+@layer components {
+    .pricing-section {
+        background-color: var(--color-bg);
+    }
+
+    .pricing-inner {
+        /*@apply relative isolate px-6 lg:px-8;*/
+    }
+
+    .pricing-header {
+        @apply mx-auto max-w-4xl text-center;
+    }
+
+    .pricing-title {
+        @apply mt-2 tracking-tight text-balance;
+        font-size: var(--font-size-lg);
+    }
+
+    .pricing-subtitle {
+        font-size: var(--font-size-4xl);
+        font-family: var(--font-heading), sans-serif;
+        font-weight: var(--font-weight-bold);
+    }
+
+    .pricing-description {
+        @apply mx-auto mt-6 max-w-2xl text-center text-pretty sm:text-xl/8;
+        font-size: var(--font-size-lg);
+    }
+
+    .pricing-grid {
+        @apply mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 sm:mt-20;
+    }
+
+    .pricing-card {
+        @apply rounded-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 transition duration-300 hover:shadow-lg;
+    }
+
+    .pricing-card-featured {
+        @apply shadow-xl transform md:scale-105 z-10 relative;
+    }
+
+    .pricing-badge {
+        @apply absolute -top-3 inset-x-0 flex justify-center;
+    }
+
+    .pricing-badge-label {
+        @apply inline-flex items-center rounded-full px-3 py-1 font-medium text-primary;
+        background-color: var(--color-gradient-hero-2);
+        font-size: var(--font-size-xs);
+    }
+
+    .pricing-plan-title {
+        @apply text-base/7 font-semibold;
+        font-size: var(--font-size-base);
+        color: var(--color-primary);
+    }
+
+    .pricing-plan-price {
+        @apply mt-4 flex items-baseline gap-x-2;
+    }
+
+    .pricing-price {
+        @apply tracking-tight;
+        font-size: var(--font-size-5xl);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .pricing-price-note {
+        @apply text-base text-gray-500;
+    }
+
+    .pricing-card-desc {
+        @apply mt-6 text-base/7 text-gray-600;
+    }
+
+    .pricing-card-ul {
+        @apply mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10;
+    }
+
+    .pricing-card-li {
+        @apply flex gap-x-3;
+    }
+
+    .pricing-icon {
+        @apply h-6 w-5 flex-none;
+        color: var(--color-primary-alt);
+    }
+
+    .pricing-btn {
+        @apply mt-8 block rounded-full px-3.5 py-2.5 text-center ring-1 ring-indigo-200 ring-inset
+        hover:ring-indigo-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary-alt);
+    }
+
+    .pricing-card-elite {
+        @apply rounded-3xl p-8 shadow-2xl ring-1 ring-gray-900/10;
+        background-color: var(--color-gray);
+    }
+
+    .pricing-card-elite-title {
+        @apply text-base/7 font-semibold;
+        color: var(--color-gradient-hero-2);
+    }
+
+    .pricing-price-elite {
+        @apply tracking-tight text-white;
+        font-size: var(--font-size-5xl);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .pricing-price-note-elite {
+        @apply text-base text-gray-400;
+    }
+
+    .pricing-card-desc-elite {
+        @apply mt-6 text-base/7 text-gray-300;
+    }
+
+    .pricing-card-ul-elite {
+        @apply mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10;
+    }
+
+    .pricing-icon-elite {
+        @apply h-6 w-5 flex-none;
+        color: var(--color-gradient-hero-2);
+    }
+
+    .pricing-btn-elite {
+        @apply mt-8 block rounded-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs
+        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10;
+        background-color: var(--color-gradient-hero-1);
+    }
+}
