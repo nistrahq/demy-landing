@@ -1,0 +1,150 @@
+@layer components {
+    .hero-bg {
+        background-color: var(--color-bg);
+        background-image:
+                radial-gradient(circle at 40% 10%, var(--color-light1), transparent 15%),
+                radial-gradient(circle at 15% 25%, var(--color-light3), transparent 15%),
+                radial-gradient(circle at 35% 35%, var(--color-light5) 0%, transparent 15%);
+        will-change: background-position, filter;
+        background-size: 200% 200%;
+        background-repeat: no-repeat;
+        animation:
+                floatBackground 5s ease-in-out infinite,
+                pulseLights 6s ease-in-out infinite;
+    }
+
+    .mask-gradient-diagonal {
+        -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    }
+
+    @keyframes floatBackground {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 10% 10%;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    @keyframes pulseLights {
+        0%, 100% {
+            filter: brightness(1);
+        }
+        50% {
+            filter: brightness(1.05);
+        }
+    }
+
+    .btn {
+        @apply cursor-pointer transition rounded-lg font-medium px-6 py-3;
+    }
+
+    .btn-lang-toggle {
+        @apply inline-flex items-center gap-2 px-3 py-3 text-sm rounded-full backdrop-blur-md
+        transition duration-150 ease-in-out transform;
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+    }
+
+    .btn-lang-toggle:hover {
+        @apply bg-white/30;
+        box-shadow: 0 0 0 1px var(--color-border), 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-lang {
+        @apply bg-white/30 text-gray-800 rounded-full shadow-md ring-1 ring-black/5;
+    }
+
+    .navbar-glass {
+        border: 1px solid var(--color-border);
+        box-shadow: 0 0 0 1px var(--color-border), 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition:
+                background-color 0.3s ease,
+                border 0.3s ease,
+                box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+        @apply inline-block font-medium rounded-full px-6 py-3
+        shadow-md transition duration-150 ease-in-out transform;
+        color: var(--color-surface);
+        background-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+        @apply shadow-lg scale-105;
+        background-color: var(--color-primary-alt);
+    }
+
+    .btn-secondary {
+        @apply inline-block font-medium rounded-full px-6 py-3
+        shadow-md transition duration-150 ease-in-out transform;
+        color: var(--color-surface);
+        background-color: var(--color-secondary);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--color-secondary-alt);
+    }
+
+    .btn-glass-white {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium text-sm bg-white/15 backdrop-blur-md
+        border border-white/20 shadow-md/5 transition-all duration-150 ease-in-out transform;
+        box-shadow: 0 0 0 1px var(--color-border), 0 1px 8px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+    }
+
+    .btn-glass-white:hover {
+        @apply bg-white/25 shadow-md scale-105;
+    }
+
+    .btn-glass-white:active {
+        @apply scale-95 shadow-md;
+    }
+
+    .btn-accent {
+        @apply inline-block font-medium rounded-lg transition px-6 py-3 text-white;
+        background-color: var(--color-accent);
+    }
+
+    .btn-accent:hover {
+        background-color: var(--color-accent-alt);
+    }
+
+    .btn-outline {
+        @apply inline-block font-medium rounded-lg transition px-6 py-3 border;
+        background-color: transparent;
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    .btn-muted {
+        @apply inline-block font-medium rounded-lg transition px-6 py-3 text-gray-500 bg-gray-200;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .btn-link {
+        @apply font-medium underline text-primary;
+    }
+
+    .btn-link:hover {
+        color: var(--color-primary-alt);
+    }
+
+    /*    @media (prefers-color-scheme: dark) {
+            .btn-glass-white {
+                @apply text-gray-200 bg-white/10 border border-white/10;
+            }
+        }*/
+}
