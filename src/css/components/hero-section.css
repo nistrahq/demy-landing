@@ -1,0 +1,104 @@
+@layer components {
+    .hero-section {
+        @apply w-full min-h-screen overflow-hidden relative z-0 flex items-center justify-center px-4 isolate;
+        padding-top: var(--spacing-section);
+        padding-bottom: var(--spacing-section);
+        background-color: var(--color-hero-bg);
+    }
+
+    .hero-layout {
+        @apply flex flex-col lg:flex-row items-center justify-between gap-10 text-black;
+    }
+
+    .hero-text {
+        @apply text-center lg:text-left max-w-xl;
+    }
+
+    .hero-subtitle {
+        @apply text-lg font-semibold uppercase mb-3;
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .hero-title {
+        @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6;
+        background-image: linear-gradient(to bottom right, var(--color-text), var(--color-muted));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .hero-title span {
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .hero-description {
+        @apply text-gray-600 mb-6;
+    }
+
+    .hero-image-wrapper {
+        @apply relative w-full flex justify-center items-center transition-all duration-500 ease-in-out
+        max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%];
+    }
+
+    .hero-gradient {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        max-height: 500px;
+        inset: 0;
+        margin: auto;
+        /* noinspection CssInvalidPropertyValue */
+        background:
+                linear-gradient(135deg, var(--color-gradient-hero-1), var(--color-gradient-hero-2)),
+                url('../../assets/images/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 150px 0 0 150px;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        /* noinspection CssInvalidPropertyValue */
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        overflow: hidden;
+    }
+
+    .hero-gradient::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        border-radius: 150px 0 0 150px;
+        background-image: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.1) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+        background-size: 20px 20px;
+        pointer-events: none;
+    }
+
+    .hero-image {
+        position: relative;
+        z-index: 3;
+        max-width: 70%;
+        height: auto;
+        border-radius: 60px;
+        transform: scale(1);
+        filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+    }
+
+    @media (max-width: 1023px) {
+        .hero-section {
+            padding-top: calc(var(--spacing-section) + 2rem);
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@layer components {
+    .container-center {
+        @apply max-w-screen-xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12;
+    }
+
+    .section {
+
+    }
+
+    .space-inner {
+        @apply space-y-18 sm:space-y-20 md:space-y-22 lg:space-y-28 xl:space-y-48;
+    }
+
+    .grid-2-col {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+    }
+
+    .grid-3-col {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+    }
+
+    .centered-screen {
+        @apply min-h-screen flex flex-col items-center justify-center text-center px-4;
+    }
+}

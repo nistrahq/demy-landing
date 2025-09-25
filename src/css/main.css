@@ -1,0 +1,117 @@
+/* --------------------------------------
+ * Tailwind Base Import (v4, no PostCSS)
+ * -------------------------------------- */
+@import "tailwindcss";
+@import "./global/base.css";
+@import "./global/components.css";
+@import "./global/layout.css";
+@import "./global/utilities.css";
+@import "./components/hero-section.css";
+@import "./components/features-section.css";
+@import "./components/how-it-works-section.css";
+@import "./components/highlighted-message-section.css";
+@import "./components/about-the-product-section.css";
+@import "./components/testimonial-section.css";
+@import "./components/about-us-section.css";
+@import "./components/about-the-team-section.css";
+@import "./components/pricing-section.css";
+
+/* --------------------------------------
+ * Theme Configuration (Tailwind v4)
+ * -------------------------------------- */
+@theme {
+  /* Colores */
+  --color-bg: #f3f4f6;
+  --color-bg-soft: #f8f9fa;
+  --color-bg-light: #f5f6f7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f9fafb;
+
+  --color-hero-bg: #f0f9ff;
+
+  --color-light1: rgba(173, 186, 230, 0.7);
+  --color-light2: rgba(182, 244, 255, 0.5);
+  --color-light3: rgba(173, 184, 230, 0.7);
+  --color-light4: rgba(153, 243, 255, 0.4);
+  --color-light5: rgba(163, 184, 238, 0.7);
+
+  --color-primary: #3F51B5;
+  --color-primary-alt: #1d4ed8;
+
+  --color-secondary: #AB47BC;
+  --color-secondary-alt: #7e22ce;
+
+  --color-accent: #F57C00;
+  --color-accent-alt: #fbbf24;
+
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-text: #111827;
+  --color-gray: #464646;
+
+  --color-gradient-hero-1: rgba(0, 97, 255, 0.7);
+  --color-gradient-hero-2: rgba(96, 234, 255, 0.7);
+
+  /* Fonts */
+  /*--font-sans: "Inter", system-ui, sans-serif;*/
+  --font-heading: "Poppins", arial, sans-serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --font-size-xs: clamp(10px, 0.2vw + 10px, 12px);
+  --font-size-sm: clamp(13px, 0.2vw + 11px, 14px);
+  --font-size-base: clamp(14px, 0.5vw + 13px, 16px);
+  --font-size-md: clamp(16px, 0.8vw + 14px, 18px);
+  --font-size-lg: clamp(16px, 0.4vw + 12px, 20px);
+  --font-size-xl: clamp(20px, 1.5vw + 16px, 24px);
+  --font-size-2xl: clamp(24px, 2vw + 16px, 30px);
+  --font-size-3xl: clamp(28px, 2.5vw + 16px, 36px);
+  --font-size-4xl: clamp(30px, 3vw + 16px, 42px);
+  --font-size-5xl: clamp(32px, 4vw + 16px, 48px);
+
+  /*
+  --font-size-xs: clamp(10px, 0.2vw + 10px, 12px);
+  --font-size-sm: clamp(13px, 0.2vw + 11px, 14px);
+  --font-size-base: clamp(14px, 0.5vw + 13px, 16px);
+  --font-size-md: clamp(16px, 0.8vw + 14px, 18px);
+  --font-size-lg: clamp(18px, 1vw + 14px, 20px);
+  --font-size-xl: clamp(20px, 1.5vw + 16px, 24px);
+  --font-size-2xl: clamp(24px, 2vw + 16px, 30px);
+  --font-size-3xl: clamp(28px, 2.5vw + 16px, 36px);
+  --font-size-4xl: clamp(30px, 3vw + 16px, 42px);
+  --font-size-5xl: clamp(32px, 4vw + 16px, 48px);
+  */
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+
+  --letter-spacing-tight: -0.015em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+
+  /* Breakpoints (referenciales) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Espaciado */
+  --spacing-section: clamp(4rem, 6vw + 2rem, 8rem);
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  /* Radios y sombras */
+  --radius-base: 0.5rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+}

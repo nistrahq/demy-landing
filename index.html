@@ -2,12 +2,768 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>demy-landing</title>
+    <title>Demy - Manage your Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <body class="min-h-screen bg-gradient-to-br from-sky-50 via-sky-100 to-gray-400">
+
+  <header class="fixed top-0 left-0 w-full z-50 pt-4">
+    <div class="container-center">
+      <nav class="relative z-50 navbar-glass rounded-full py-3 px-4 sm:px-6 flex items-center justify-between backdrop-blur-md border border-white/20 bg-white/10">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="/src/assets/logos/demy-combination-mark-principal.png" alt="Mi Logo" class="h-8 w-auto" />
+        </div>
+
+        <!-- Botón hamburguesa / cerrar -->
+        <button id="menu-toggle" class="md:hidden text-black focus:outline-none relative w-6 h-6">
+          <!-- Icono hamburguesa -->
+          <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg"
+               class="absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out transform origin-center rotate-0 opacity-100"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <!-- Icono cerrar (X) -->
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg"
+               class="absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out transform origin-center rotate-90 opacity-0"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Enlaces (solo escritorio) -->
+        <ul class="hidden md:flex gap-6 text-white font-medium">
+          <li><a href="#features" class="hover:underline">Features</a></li>
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#contact" class="hover:underline" id="nav-contact">Contact</a></li>
+        </ul>
+
+        <!-- Acciones (solo escritorio) -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Idioma -->
+          <div class="relative">
+            <button id="lang-toggle" class="btn btn-lang-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                <path d="M2 12h20" stroke-width="2"/>
+                <path d="M12 2a15 15 0 010 20a15 15 0 010-20z" stroke-width="2"/>
+              </svg>
+              <span id="current-lang">EN</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" stroke-width="2"/>
+              </svg>
+            </button>
+
+            <!-- Dropdown -->
+            <div id="lang-options" class="dropdown-lang hidden absolute right-0 mt-2 w-32 rounded-md shadow-lg ring-1 ring-black/10 z-10">
+              <ul class="py-1 text-sm text-gray-700">
+                <li><button id="lang-en" class="cursor-pointer w-full text-left px-4 py-2 hover:bg-gray-100">English</button></li>
+                <li><button id="lang-es" class="cursor-pointer w-full text-left px-4 py-2 hover:bg-gray-100">Español</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Botones de sesión -->
+          <button class="btn btn-glass-white text-sm">Login</button>
+          <button class="btn btn-primary text-sm">Sign up</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Menú desplegable móvil -->
+    <div id="mobile-menu"
+         class="fixed inset-0 h-screen bg-white/30 backdrop-blur-md z-40
+            opacity-0 pointer-events-none transform -translate-y-6 transition-all duration-300 ease-out md:hidden pt-[72px]">
+
+      <!-- Enlaces -->
+      <ul class="flex flex-col items-center gap-6 py-6 text-black font-medium">
+        <li><a href="#features" class="hover:underline">Features</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <!-- Acciones móviles -->
+      <div class="mt-4 flex flex-col items-center gap-4 pb-6">
+        <!-- Botones de sesión -->
+        <button class="btn btn-glass-white text-sm">Login</button>
+        <button class="btn btn-primary text-sm">Sign up</button>
+
+        <!-- Idioma -->
+        <div class="relative">
+          <button id="lang-toggle-mobile" class="btn btn-lang-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path d="M2 12h20" stroke-width="2"/>
+              <path d="M12 2a15 15 0 010 20a15 15 0 010-20z" stroke-width="2"/>
+            </svg>
+            <span id="current-lang">EN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="hero" class="hero-section hero-bg">
+    <div class="container-center">
+      <div class="hero-layout">
+
+        <!-- Texto -->
+        <div class="hero-text">
+          <p id="hero-subtitle" class="hero-subtitle">
+            Optimiza tu cartera
+          </p>
+          <h1 id="hero-title" class="hero-title">
+            Gestión Inteligente de <span>Letras y Facturas</span>
+          </h1>
+          <p class="hero-description">
+            Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad.
+          </p>
+          <!-- Botones en fila -->
+          <div class="mt-6 flex flex-col lg:flex-row gap-4 w-full">
+            <a href="/dashboard" class="btn btn-primary w-full lg:w-auto text-center">
+              Comienza ahora
+            </a>
+            <a href="#pricing" class="btn btn-glass-white w-full lg:w-auto text-center">
+              Ver planes y precios
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen con fondo degradado -->
+        <div class="hero-image-wrapper">
+          <div class="hero-gradient"></div>
+          <img src="./src/assets/images/hero-people.png" alt="Gestión Financiera" class="hero-image">
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <section id="features" class="features-section">
+
+    <div class="container-center space-inner">
+
+      <div class="grid-2-col gap-25 items-center">
+        <!-- Imagen -->
+        <div class="feature-image-wrapper order-2 md:order-1">
+          <img src="./src/assets/images/features-illustration-1.jpg" alt="Features" class="feature-image" />
+        </div>
+
+        <!-- Texto -->
+        <div class="feature-content order-1 md:order-2">
+          <h2 class="feature-title">Simplifica tus finanzas como nunca antes</h2>
+          <p class="feature-description">
+            Nuestra herramienta está diseñada para maximizar tu eficiencia financiera:
+          </p>
+          <ul class="feature-list">
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span>Cálculo automático de TCEA</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span>Reportes financieros claros</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span>Controla tu cartera</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span>Optimiza tus finanzas</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2-col items-center">
+        <!-- Texto -->
+        <div class="feature-content order-1 md:order-1">
+          <h2 class="feature-title">Toma el control de tu flujo de caja</h2>
+          <p class="feature-description">
+            Nuestra plataforma te permite tener claridad total sobre cada movimiento:
+          </p>
+          <ul class="feature-list">
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span>Seguimiento de pagos</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span>Alertas personalizadas</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span>Proyecciones en tiempo real</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span>Exporta reportes fácilmente</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Imagen -->
+        <div class="feature-image-wrapper order-2 md:order-2">
+          <img src="./src/assets/images/features-illustration-1.jpg" alt="Flujo de caja" class="feature-image" />
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="how-it-works" class="how-it-works-section">
+
+    <div class="container-center text-center">
+      <h2 class="how-it-works-title">¿Cómo funciona?</h2>
+      <p class="how-it-works-subtitle">Te mostramos lo simple que es comenzar a optimizar tus finanzas</p>
+    </div>
+
+    <div class="container-center how-it-works-grid">
+      <!-- Card 1 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-sign-up.svg" alt="Registro" class="card-icon-img" />
+        <div class="card-content">
+          <h3 class="card-title">Regístrate</h3>
+          <p class="card-description">Crea tu cuenta en minutos y accede al panel principal al instante.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-data-entry.svg" alt="Datos personales" class="card-icon-img" />
+        <div class="card-content">
+          <h3 class="card-title">Agrega tus datos</h3>
+          <p class="card-description">Introduce tu información financiera y preferencias de cuenta.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-report.svg" alt="Reportes y análisis" class="card-icon-img" />
+        <div class="card-content">
+          <h3 class="card-title">Visualiza resultados</h3>
+          <p class="card-description">Obtén reportes y recomendaciones personalizadas.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="highlighted-message-section">
+
+    <div class="container-center text-center">
+
+      <hr class="highlighted-line" />
+
+      <div class="container-center highlighted-message-grid">
+        <h2 class="highlighted-title">
+          Demy hace las labores manuales como un pan<br>comido
+        </h2>
+        <p class="highlighted-subtitle">
+          Dile adiós al excel y a las finanzas manuales, te ofrece consejos personalizados y te guía hacia tus metas económicas de forma sencilla y segura.
+        </p>
+      </div>
+
+      <hr class="highlighted-line" />
+
+    </div>
+  </section>
+
+  <section id="about-product" class="about-product-section">
+    <div class="container-center">
+      <div class="about-product-grid">
+
+        <!-- Video -->
+        <div class="about-product-video">
+          <iframe
+                  src="https://www.youtube.com/embed/I__Exh8g3Ao"
+                  title="Sobre el producto - Video"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="video-iframe"
+          ></iframe>
+        </div>
+
+        <!-- Texto -->
+        <div class="about-product-text">
+          <!--<p class="about-product-subtitle">Sobre el producto</p>-->
+          <h2 class="about-product-title">Conoce la plataforma</h2>
+          <p class="about-product-description">
+            Demy automatiza la gestión académica: matrículas, horarios, pagos y seguimiento.
+          </p>
+          <p class="about-product-description mt-4">
+            Diseñado para academias que quieren optimizar procesos sin perder el enfoque pedagógico.
+          </p>
+          <p class="about-product-description mt-4">
+            Gestionar tu academia nunca fue tan fácil.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container-center text-center">
+      <div class="testimonial-title-wrapper">
+        <img src="src/assets/icons/quote.svg" alt="Quote Left" class="quote-icon quote-icon-left" />
+        <h2 class="testimonial-title">
+          El mejor servicio financiero de todos
+        </h2>
+        <img src="src/assets/icons/quote.svg" alt="Quote Right" class="quote-icon" />
+      </div>
+      <p class="how-it-works-subtitle">Así como ellos, tú también optimiza tu negocio. Fácil. En un instante.</p>
+    </div>
+
+    <div class="testimonials-grid container-center">
+      <!-- Testimonio 1 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          “Me ayudó a organizar mis finanzas personales en tiempo récord”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-1.jpg" alt="Foto de Laura" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Laura Fernández</p>
+            <p class="testimonial-role">Emprendedora</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="testimonial-card wide hidden md:block">
+        <p class="testimonial-text">
+          “Me ayudó a organizar mis finanzas personales en tiempo récord. ¡Recomendadísimo!”
+          Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-2.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-3.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 4 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-4.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 5 -->
+      <div class="testimonial-card tall hidden md:block">
+        <p class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.
+          ¡Gracias demy por todo! No se que mas poner aqui para rellenar, gracias.
+          Hola esto es un texto de relleno jajaja full chow con ese profe ponce,
+          No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+          ¡Recomendadísimo!
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-5.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 6 -->
+      <div class="testimonial-card wide hidden md:block">
+        <p class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-6.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agrega más testimonios si deseas -->
+    </div>
+  </section>
+
+  <section class="about-us-section">
+    <div class="container-center">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Conoce al equipo</h2>
+        <p class="section-subtitle">Profesionales comprometidos con transformar la educación</p>
+      </div>
+
+      <div class="about-us-grid">
+        <!-- Bloque 1 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-1.JPG" alt="Foto de Ana" class="member-photo" />
+          <p class="member-name">Ana López</p>
+          <p class="member-role">CEO</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-2.png" alt="Foto de Bruno" class="member-photo" />
+          <p class="member-name">Bruno Díaz</p>
+          <p class="member-role">CTO</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-3.jpg" alt="Foto de Bruno" class="member-photo" />
+          <p class="member-name">Bruno Díaz</p>
+          <p class="member-role">CTO</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-4.jpg" alt="Foto de Bruno" class="member-photo" />
+          <p class="member-name">Bruno Díaz</p>
+          <p class="member-role">CTO</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 5 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-5.jpg" alt="Foto de Bruno" class="member-photo" />
+          <p class="member-name">Bruno Díaz</p>
+          <p class="member-role">CTO</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about-team" class="about-team-section">
+    <div class="container-center">
+      <div class="about-team-grid">
+
+        <!-- Texto -->
+        <div class="about-team-text">
+          <h2 id="about-the-team-title" class="about-team-title">
+            Nuestra historia
+          </h2>
+          <p class="about-team-description">
+            En Demy, creemos que la educación merece herramientas simples, potentes y humanas.
+          </p>
+          <p class="about-team-description mt-4">
+            Nuestro equipo combina experiencia tecnológica y compromiso pedagógico para ayudarte a transformar tu academia.
+          </p>
+        </div>
+
+        <!-- Video -->
+        <div class="about-team-video">
+          <iframe
+                  src="https://www.youtube.com/embed/TQvLvAzlZCs"
+                  title="Sobre el equipo - Video"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="video-iframe"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="container-center">
+      <div class="pricing-inner">
+
+        <!-- Título -->
+        <header class="pricing-header">
+          <h2 id="pricing-title" class="pricing-title">Plans & Pricing</h2>
+          <p id="pricing-subtitle" class="pricing-subtitle">Choose the right plan for you</p>
+        </header>
+        <p id="pricing-description" class="pricing-description">
+          Optimize the management of educational and sports academies through an all-in-one platform that streamlines administration and improves operational efficiency.
+        </p>
+
+        <!-- Tarjetas -->
+        <div class="pricing-grid">
+
+          <!-- Essentials -->
+          <div id="essential-card" class="pricing-card">
+            <h3 id="essential-title" class="pricing-plan-title">Essentials</h3>
+            <p class="pricing-plan-price">
+              <span id="essential-price" class="pricing-price">$29.90</span>
+              <span id="essential-price_per_month" class="pricing-price-note">/month</span>
+            </p>
+            <p id="starter-description" class="pricing-card-desc">For small academies.</p>
+            <ul id="essential-features" role="list" class="pricing-card-ul">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_1">1 location</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_2">Up to 100 students</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_3">Up to 10 teachers</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_4">Enrollment and payment management</span>
+              </li>
+            </ul>
+            <a href="https://demy-frontend.netlify.app/plantSelect"
+               class="pricing-btn"
+               id="get-started">
+              Get started today
+            </a>
+          </div>
+
+          <!-- Pro -->
+          <div id="pro-card" class="pricing-card pricing-card-featured">
+            <div class="pricing-badge">
+              <span id="most-popular" class="pricing-badge-label">Most Popular</span>
+            </div>
+            <h3 id="pro-title" class="pricing-plan-title">Pro</h3>
+            <p class="pricing-plan-price">
+              <span id="pro-price" class="pricing-price">$59.90</span>
+              <span id="pro-price-per-month" class="pricing-price-note">/month</span>
+            </p>
+            <p id="pro-description" class="pricing-card-desc">For medium-sized academies.</p>
+            <ul id="hobby-features" role="list" class="pricing-card-ul">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_1">Up to 2 locations</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_2">Up to 500 students</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_3">Up to 50 teachers</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_4">Enrollment and payment management</span></li>
+            </ul>
+            <a href="https://demy-frontend.netlify.app/plantSelect"
+               class="pricing-btn"
+               id="pro-get-started">
+              Get started today
+            </a>
+          </div>
+
+          <!-- Elite -->
+          <div id="elite-card" class="pricing-card-elite">
+            <h3 id="elite-title" class="pricing-card-elite-title">Elite</h3>
+            <p class="pricing-plan-price">
+              <span id="elite-price" class="pricing-price-elite">$199.90</span>
+              <span id="elite-price_per_month" class="pricing-price-note-elite">/month</span>
+            </p>
+            <p id="elite-description" class="pricing-card-desc-elite">For large academies.</p>
+            <ul id="enterprise-features" role="list" class="pricing-card-ul-elite">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon-elite" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_1">Up to 2000 students</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon-elite" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_2">Up to 200 teachers</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon-elite" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_3">Priority support</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon-elite" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_4">Enrollment and payment management</span></li>
+            </ul>
+            <a href="https://demy-frontend.netlify.app/plantSelect"
+               class="pricing-btn-elite"
+               id="elite-get-started">
+              Get started today
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container-center">
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container-center">
+
+    </div>
+  </section>
+
+  <section id="footer" class="footer-section">
+    <div class="container-center">
+
+    </div>
+  </section>
+
+  <script type="module" src="/src/js/main.js"></script>
+
   </body>
 </html>

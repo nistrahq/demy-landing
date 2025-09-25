@@ -1,0 +1,38 @@
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans antialiased;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-sans), sans-serif;
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-base);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading), sans-serif;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+    }
+
+    h2 {
+        font-size: var(--font-size-4xl);
+    }
+
+    section {
+        padding-top: var(--spacing-section);
+        padding-bottom: var(--spacing-section);
+    }
+
+    a {
+        @apply transition-colors duration-200 ease-in-out;
+        color: var(--color-primary);
+    }
+
+    a:hover {
+        color: var(--color-primary-alt);
+    }
+}
