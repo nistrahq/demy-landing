@@ -754,12 +754,14 @@
   <section id="contact" class="contact-section">
       <div class="container-center">
           <div class="contact-grid">
+
               <div class="contact-form-container">
-                  <h2 class="contact-title">¿Cómo podemos ayudarte? </h2>
-                  <p class="contact-description">Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.</p>
+                  <h2 class="contact-title" id="contact-title">¿Cómo podemos ayudarte?</h2>
+                  <p class="contact-description" id="contact-description">Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.</p>
+
                   <form action="#" method="POST" class="contact-form" id="contact-form">
                       <div class="form-group">
-                          <label for="name" class="form-label">Tu Nombre</label>
+                          <label for="name" class="form-label" id="contact-name-label">Tu Nombre</label>
                           <div class="input-with-icon">
                               <svg class="input-icon" fill="currentColor">
                                   <use xlink:href="/src/assets/icons/sprite.svg#icon-user"></use>
@@ -768,7 +770,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="email" class="form-label">Tu Email</label>
+                          <label for="email" class="form-label" id="contact-email-label">Tu Email</label>
                           <div class="input-with-icon">
                               <svg class="input-icon" fill="currentColor">
                                   <use xlink:href="/src/assets/icons/sprite.svg#icon-email-input"></use>
@@ -777,8 +779,8 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="message" class="form-label">Tu Mensaje</label>
-                          <textarea id="message" name="message" rows="4" class="form-input" placeholder="Escribe algo si quieres..." required></textarea>
+                          <label for="message" class="form-label" id="contact-message-label">Tu Mensaje</label>
+                          <textarea id="message" name="message" rows="4" class="form-input" placeholder="Ej: 'Hola, me gustaría agendar una demostración para mi academia...'" required></textarea>
                       </div>
                       <button type="submit" id="submit-button" class="btn btn-primary w-full" disabled>Enviar Mensaje</button>
                   </form>
@@ -814,6 +816,7 @@
                       </div>
                   </div>
               </div>
+
           </div>
       </div>
   </section>
