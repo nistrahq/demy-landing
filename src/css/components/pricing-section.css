@@ -1,6 +1,6 @@
 @layer components {
     .pricing-section {
-        background-color: var(--color-bg);
+        background-color: var(--color-white);
     }
 
     .pricing-inner {
@@ -12,8 +12,15 @@
     }
 
     .pricing-title {
-        @apply mt-2 tracking-tight text-balance;
-        font-size: var(--font-size-lg);
+        @apply leading-tight;
+        font-family: var(--font-heading);
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .pricing-subtitle {
@@ -45,7 +52,8 @@
 
     .pricing-badge-label {
         @apply inline-flex items-center rounded-full px-3 py-1 font-medium text-primary;
-        background-color: var(--color-gradient-hero-2);
+        color: var(--color-white);
+        background-color: var(--color-gradient-hero-1);
         font-size: var(--font-size-xs);
     }
 
@@ -95,13 +103,12 @@
     }
 
     .pricing-card-elite {
-        @apply rounded-3xl p-8 shadow-2xl ring-1 ring-gray-900/10;
-        background-color: var(--color-gray);
+        @apply rounded-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 transition duration-300 hover:shadow-lg;
     }
 
     .pricing-card-elite-title {
         @apply text-base/7 font-semibold;
-        color: var(--color-gradient-hero-2);
+        color: var(--color-primary);
     }
 
     .pricing-price-elite {
@@ -130,6 +137,6 @@
     .pricing-btn-elite {
         @apply mt-8 block rounded-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs
         focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10;
-        background-color: var(--color-gradient-hero-1);
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     }
 }
