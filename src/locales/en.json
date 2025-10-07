@@ -1,9 +1,63 @@
 {
   "hero": {
     "title": "Your journey to better future starts here",
-    "subtitle": "All in one"
+    "subtitle": "All in one",
+    "description": "Automatically calculate your APR, generate reports, and easily improve your financial management.",
+    "buttonStartNow": "Start now",
+    "buttonPricing": "See Plans and Prices"
   },
   "nav": {
     "contact": "Contact Us"
+  },
+  "feature": {
+    "title1": "Simplify your finances like never before",
+    "description1": "Our tool is designed to maximize your financial efficiency:",
+    "item1": "Automatic calculation of APR",
+    "item2": "Clear financial reports",
+    "item3": "Control your portfolio",
+    "item4": "Optimize your finances",
+    "title2": "Take control of your cash flow",
+    "description2": "Our platform allows you to have complete clarity about every movement:",
+    "item5": "Payment tracking",
+    "item6": "Custom alerts",
+    "item7": "Real-time projections",
+    "item8": "Export reports easily"
+  },
+  "howItWorks": {
+    "title": "How does it work?",
+    "description": "We show you how simple it is to start optimizing your finances",
+    "subtitle1": "Sign up",
+    "description1": "Create your account in minutes and access the main dashboard instantly.",
+    "subtitle2": "Add your data",
+    "description2": "Enter your financial information and account preferences.",
+    "subtitle3": "View results",
+    "description3": "Get personalized reports and recommendations."
+  },
+  "message": {
+    "title": "Demy makes manual labor a piece of cake.",
+    "description": "Say goodbye to Excel and manual finances. It offers personalized advice and guides you toward your financial goals in a simple and secure way."
+  },
+  "aboutProduct": {
+    "title": "Get to know the platform",
+    "description1": "Demy automates academic management: enrollment, scheduling, payments, and tracking.",
+    "description2": "Designed for academies that want to optimize processes without losing their pedagogical focus.",
+    "description3": "Managing your academy has never been easier. "
+  },
+  "testimonials": {
+    "title": "The best financial service of all",
+    "description": "Just like them, you too can optimize your business. Easy. In an instant.",
+    "testimony1": "“It helped me organize my personal finances in record time.”",
+    "testimony2": "“It helped me organize my personal finances in record time. Highly recommended!” I’ve never felt so productive!",
+    "testimony3": "“Not only did I understand my expenses better, I also saved more in less time.”",
+    "testimony4": "“Not only did I understand my expenses better, I also saved more in less time.”",
+    "testimony5": "“Not only did I understand my expenses better, I also saved more in less time.”",
+    "testimony6": "“Not only did I understand my expenses better, I also saved more in less time. Thanks Demy for everything!. Not only did I understand my expenses better, I also saved more in less time.” Highly recommended!"
+  },
+  "aboutTeam": {
+    "title1": "Meet the team",
+    "description1": "Professionals committed to transforming education",
+    "title2": "Our story",
+    "description2": "At Demy, we believe that education deserves tools that are simple, powerful, and human.",
+    "description3": "Our team combines technological expertise and pedagogical commitment to help you transform your academy."
   }
 }
