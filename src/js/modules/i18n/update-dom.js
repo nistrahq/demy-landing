@@ -5,6 +5,25 @@ export function updateTexts(data) {
     getElement("hero-subtitle").textContent = data.hero.subtitle;
     getElement("nav-contact").textContent = data.nav.contact;
 
+    // FAQ Section
+    getElement("faq-heading").textContent = data.faq.heading;
+
+    // FAQ Question 1
+    getElement("faq-question-one").textContent = data.faq.question_one.title;
+    getElement("faq-answer-one").textContent = data.faq.question_one.answer;
+
+    // FAQ Question 2
+    getElement("faq-question-two").textContent = data.faq.question_two.title;
+    getElement("faq-answer-two").textContent = data.faq.question_two.answer;
+
+    // FAQ Question 3
+    getElement("faq-question-three").textContent = data.faq.question_three.title;
+    getElement("faq-answer-three").textContent = data.faq.question_three.answer;
+
+    // FAQ Question 4
+    getElement("faq-question-four").textContent = data.faq.question_four.title;
+    getElement("faq-answer-four").textContent = data.faq.question_four.answer;
+
     // Footer Section (implementación)
     getElement("footer-product-title").textContent = data.footer.product.title;
     getElement("footer-product-features").textContent = data.footer.product.features;
@@ -136,5 +155,4 @@ export function updateTexts(data) {
 
     getElement("privacy-update-label").textContent = data.privacyModal.lastUpdate.label;
     getElement("privacy-update-date").textContent = data.privacyModal.lastUpdate.date;
-
 }
