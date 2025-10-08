@@ -75,8 +75,7 @@
           </div>
 
           <!-- Botones de sesión -->
-          <button class="btn btn-glass-white text-sm">Login</button>
-          <button class="btn btn-primary text-sm">Sign up</button>
+          <button class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
         </div>
       </nav>
     </div>
@@ -95,9 +94,9 @@
 
       <!-- Acciones móviles -->
       <div class="mt-4 flex flex-col items-center gap-4 pb-6">
+
         <!-- Botones de sesión -->
-        <button class="btn btn-glass-white text-sm">Login</button>
-        <button class="btn btn-primary text-sm">Sign up</button>
+        <button class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
 
         <!-- Idioma -->
         <div class="relative">
@@ -129,13 +128,21 @@
           <p class="hero-description">
             Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad.
           </p>
-          <!-- Botones en fila -->
-          <div class="mt-6 flex flex-col lg:flex-row gap-4 w-full">
-            <a href="/dashboard" class="btn btn-primary w-full lg:w-auto text-center">
-              Comienza ahora
+          <!-- App Stores -->
+          <div class="app-stores mt-8 flex flex-col sm:flex-row items-center gap-4 justify-start">
+            <a href="https://play.google.com" id="footer-playstore-link" aria-label="Descargar en Google Play"
+               class="hover:opacity-90 transition-opacity duration-300">
+              <img
+                      src="https://tb-static.uber.com/prod/udam-assets/07335cd8-47d5-51a0-a07b-125195eb4cea.svg"
+                      alt="Descargar en Google Play"
+                      class="h-12 w-auto">
             </a>
-            <a href="#pricing" class="btn btn-glass-white w-full lg:w-auto text-center">
-              Ver planes y precios
+            <a href="https://www.apple.com/la/app-store/" id="footer-appstore-link" aria-label="Descargar en la App Store"
+               class="hover:opacity-90 transition-opacity duration-300">
+              <img
+                      src="https://tb-static.uber.com/prod/udam-assets/e723f2d5-90c4-5d3b-ad4d-c36fa5597879.svg"
+                      alt="Descargar en la App Store"
+                      class="h-12 w-auto">
             </a>
           </div>
         </div>
