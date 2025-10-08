@@ -4,9 +4,13 @@
     "subtitle": "All in one",
     "description": "Automatically calculate your APR, generate reports, and easily improve your financial management."
   },
-  "nav": {
-    "contact": "Contact Us"
-  },
+  "features_anchor": "Features",
+  "how_it_works_anchor": "How it works",
+  "testimonials_anchor": "Testimonials",
+  "about_us_anchor": "About us",
+  "pricing_anchor": "Pricing",
+  "faq_anchor": "FAQ",
+  "contact_anchor": "Contact",
   "feature": {
     "title1": "Simplify your finances like never before",
     "description1": "Our tool is designed to maximize your financial efficiency:",
@@ -247,6 +251,8 @@
       "date": "January 2025"
     }
   },
+  "see_pricing": "See Pricing",
+  "see_pricing_mobile": "See Pricing",
   "pricing": {
     "title": "The perfect plan for you",
     "description": "Optimize the management of educational and sports academies through an all-in-one platform that streamlines administration and improves operational efficiency."

@@ -44,9 +44,13 @@
 
         <!-- Enlaces (solo escritorio) -->
         <ul class="hidden md:flex gap-6 text-white font-medium">
-          <li><a href="#features" class="hover:underline">Features</a></li>
-          <li><a href="#about" class="hover:underline">About</a></li>
-          <li><a href="#contact" class="hover:underline" id="nav-contact">Contact</a></li>
+          <li><a href="#features" id="features-anchor" class="hover:underline">Features</a></li>
+          <li><a href="#how-it-works" id="how-it-works-anchor" class="hover:underline">How it works</a></li>
+          <li><a href="#testimonials" id="testimonials-anchor" class="hover:underline">About</a></li>
+          <li><a href="#about-us" id="about-us-anchor" class="hover:underline">About us</a></li>
+          <li><a href="#pricing" id="pricing-anchor" class="hover:underline">Pricing</a></li>
+          <li><a href="#faq" id="faq-anchor" class="hover:underline">FAQ</a></li>
+          <li><a href="#contact" id="contact-anchor" class="hover:underline">Contact</a></li>
         </ul>
 
         <!-- Acciones (solo escritorio) -->
@@ -75,7 +79,7 @@
           </div>
 
           <!-- Botones de sesión -->
-          <button class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
+          <button id="see-pricing" class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
         </div>
       </nav>
     </div>
@@ -96,7 +100,7 @@
       <div class="mt-4 flex flex-col items-center gap-4 pb-6">
 
         <!-- Botones de sesión -->
-        <button class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
+        <button id="see-pricing-mobile" class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
 
         <!-- Idioma -->
         <div class="relative">
@@ -303,7 +307,7 @@
 
   </section>
 
-  <section class="highlighted-message-section">
+  <section id="highlighted-message" class="highlighted-message-section">
 
     <div class="container-center text-center">
 
@@ -357,7 +361,7 @@
     </div>
   </section>
 
-  <section class="testimonials-section">
+  <section id="testimonials" class="testimonials-section">
     <div class="container-center text-center">
       <div class="testimonial-title-wrapper">
         <img src="src/assets/icons/quote.svg" alt="Quote Left" class="quote-icon quote-icon-left" />
@@ -463,7 +467,7 @@
     </div>
   </section>
 
-  <section class="about-us-section">
+  <section id="about-us" class="about-us-section">
     <div class="container-center">
       <div class="text-center mb-12">
         <h2 id="aboutTeam-title1" class="section-title about-us-title">Conoce al equipo</h2>

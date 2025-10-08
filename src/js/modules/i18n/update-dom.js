@@ -3,8 +3,14 @@ import { getElement } from "../../utils/get-element.js";
 export function updateTexts(data) {
     getElement("hero-title").textContent = data.hero.title;
     getElement("hero-subtitle").textContent = data.hero.subtitle;
-    getElement("nav-contact").textContent = data.nav.contact;
     getElement("hero-description").textContent = data.hero.description;
+    getElement("features-anchor").textContent = data.features_anchor;
+    getElement("how-it-works-anchor").textContent = data.how_it_works_anchor;
+    getElement("testimonials-anchor").textContent = data.testimonials_anchor;
+    getElement("about-us-anchor").textContent = data.about_us_anchor;
+    getElement("pricing-anchor").textContent = data.pricing_anchor;
+    getElement("faq-anchor").textContent = data.faq_anchor;
+    getElement("contact-anchor").textContent = data.contact_anchor;
 
     //Feature section
     getElement("feature-title1").textContent = data.feature.title1;
@@ -219,6 +225,8 @@ export function updateTexts(data) {
 
     //PRICING SECTION
     // Section header
+    getElement("see-pricing").textContent = data.see_pricing;
+    getElement("see-pricing-mobile").textContent = data.see_pricing_mobile;
     getElement("pricing-title").textContent = data.pricing.title;
     getElement("pricing-description").textContent = data.pricing.description;
 

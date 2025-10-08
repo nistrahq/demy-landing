@@ -4,9 +4,13 @@
     "subtitle": "Todo en uno",
     "description": "Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad."
   },
-  "nav": {
-    "contact": "Contáctanos"
-  },
+  "features_anchor": "Características",
+  "how_it_works_anchor": "Pasos",
+  "testimonials_anchor": "Testimonios",
+  "about_us_anchor": "Nosotros",
+  "pricing_anchor": "Precios",
+  "faq_anchor": "Preguntas",
+  "contact_anchor": "Contacto",
   "feature": {
     "title1": "Simplifica tus finanzas como nunca antes",
     "description1": "Nuestra herramienta está diseñada para maximizar tu eficiencia financiera:",
@@ -247,6 +251,8 @@
       "date": "Enero 2025"
     }
   },
+  "see_pricing": "Ver Precios",
+  "see_pricing_mobile": "Ver Precios",
   "pricing": {
     "title": "El plan perfecto para ti",
     "description": "Optimiza la gestión de academias educativas y deportivas mediante una plataforma todo en uno que agiliza la administración y mejora la eficiencia operativa."
