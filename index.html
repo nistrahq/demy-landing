@@ -2,12 +2,1128 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>demy-landing</title>
+    <title>Demy - Manage your Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <body class="min-h-screen bg-gradient-to-br from-sky-50 via-sky-100 to-gray-400">
+
+  <header class="fixed top-0 left-0 w-full z-50 pt-4">
+    <div class="container-center">
+      <nav class="relative z-50 navbar-glass rounded-full py-3 px-4 sm:px-6 flex items-center justify-between backdrop-blur-md border border-white/20 bg-white/10">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="/src/assets/logos/demy-combination-mark-principal.png" alt="Mi Logo" class="h-8 w-auto" />
+        </div>
+
+        <!-- Botón hamburguesa / cerrar -->
+        <button id="menu-toggle" class="md:hidden text-black focus:outline-none relative w-6 h-6">
+          <!-- Icono hamburguesa -->
+          <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg"
+               class="absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out transform origin-center rotate-0 opacity-100"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <!-- Icono cerrar (X) -->
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg"
+               class="absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out transform origin-center rotate-90 opacity-0"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Enlaces (solo escritorio) -->
+        <ul class="hidden md:flex gap-6 text-white font-medium">
+          <li><a href="#features" id="features-anchor" class="hover:underline">Features</a></li>
+          <li><a href="#how-it-works" id="how-it-works-anchor" class="hover:underline">How it works</a></li>
+          <li><a href="#testimonials" id="testimonials-anchor" class="hover:underline">About</a></li>
+          <li><a href="#about-us" id="about-us-anchor" class="hover:underline">About us</a></li>
+          <li><a href="#pricing" id="pricing-anchor" class="hover:underline">Pricing</a></li>
+          <li><a href="#faq" id="faq-anchor" class="hover:underline">FAQ</a></li>
+          <li><a href="#contact" id="contact-anchor" class="hover:underline">Contact</a></li>
+        </ul>
+
+        <!-- Acciones (solo escritorio) -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Idioma -->
+          <div class="relative">
+            <button id="lang-toggle" class="btn btn-lang-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                <path d="M2 12h20" stroke-width="2"/>
+                <path d="M12 2a15 15 0 010 20a15 15 0 010-20z" stroke-width="2"/>
+              </svg>
+              <span id="current-lang">EN</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" stroke-width="2"/>
+              </svg>
+            </button>
+
+            <!-- Dropdown -->
+            <div id="lang-options" class="dropdown-lang hidden absolute right-0 mt-2 w-32 rounded-md shadow-lg ring-1 ring-black/10 z-10">
+              <ul class="py-1 text-sm text-gray-700">
+                <li><button id="lang-en" class="cursor-pointer w-full text-left px-4 py-2 hover:bg-gray-100">English</button></li>
+                <li><button id="lang-es" class="cursor-pointer w-full text-left px-4 py-2 hover:bg-gray-100">Español</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Botones de sesión -->
+          <button id="see-pricing" class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Menú desplegable móvil -->
+    <div id="mobile-menu"
+         class="fixed inset-0 h-screen bg-white/30 backdrop-blur-md z-40
+            opacity-0 pointer-events-none transform -translate-y-6 transition-all duration-300 ease-out md:hidden pt-[72px]">
+
+      <!-- Enlaces -->
+      <ul class="flex flex-col items-center gap-6 py-6 text-black font-medium">
+        <li><a href="#features" id="features-anchor-mobile" class="hover:underline">Features</a></li>
+        <li><a href="#how-it-works" id="how-it-works-anchor-mobile" class="hover:underline">How it works</a></li>
+        <li><a href="#testimonials" id="testimonials-anchor-mobile" class="hover:underline">About</a></li>
+        <li><a href="#about-us" id="about-us-anchor-mobile" class="hover:underline">About us</a></li>
+        <li><a href="#pricing" id="pricing-anchor-mobile" class="hover:underline">Pricing</a></li>
+        <li><a href="#faq" id="faq-anchor-mobile" class="hover:underline">FAQ</a></li>
+        <li><a href="#contact" id="contact-anchor-mobile" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <!-- Acciones móviles -->
+      <div class="mt-4 flex flex-col items-center gap-4 pb-6">
+
+        <!-- Botones de sesión -->
+        <button id="see-pricing-mobile" class="btn btn-primary text-sm" onclick="location.href='#pricing'">See pricing</button>
+
+        <!-- Idioma -->
+        <div class="relative">
+          <button id="lang-toggle-mobile" class="btn btn-lang-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path d="M2 12h20" stroke-width="2"/>
+              <path d="M12 2a15 15 0 010 20a15 15 0 010-20z" stroke-width="2"/>
+            </svg>
+            <span id="current-lang">EN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="hero" class="hero-section hero-bg">
+    <div class="container-center">
+      <div class="hero-layout">
+
+        <!-- Texto -->
+        <div class="hero-text">
+          <p id="hero-subtitle" class="hero-subtitle">
+            Optimiza tu cartera
+          </p>
+          <h1 id="hero-title" class="hero-title">
+            Gestión Inteligente de <span>Letras y Facturas</span>
+          </h1>
+          <p id="hero-description" class="hero-description">
+            Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad.
+          </p>
+          <!-- App Stores -->
+          <div class="app-stores mt-8 flex flex-col sm:flex-row items-center gap-4 justify-start">
+            <a href="https://play.google.com" id="footer-playstore-link" aria-label="Descargar en Google Play"
+               class="hover:opacity-90 transition-opacity duration-300">
+              <img
+                      src="https://tb-static.uber.com/prod/udam-assets/07335cd8-47d5-51a0-a07b-125195eb4cea.svg"
+                      alt="Descargar en Google Play"
+                      class="h-12 w-auto">
+            </a>
+            <a href="https://www.apple.com/la/app-store/" id="footer-appstore-link" aria-label="Descargar en la App Store"
+               class="hover:opacity-90 transition-opacity duration-300">
+              <img
+                      src="https://tb-static.uber.com/prod/udam-assets/e723f2d5-90c4-5d3b-ad4d-c36fa5597879.svg"
+                      alt="Descargar en la App Store"
+                      class="h-12 w-auto">
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen con fondo degradado -->
+        <div class="hero-image-wrapper">
+          <div class="hero-gradient"></div>
+          <img src="./src/assets/images/hero-people.png" alt="Gestión Financiera" class="hero-image">
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <section id="features" class="features-section">
+
+    <div class="container-center space-inner">
+
+      <div class="grid-2-col gap-25 items-center">
+        <!-- Imagen -->
+        <div class="feature-image-wrapper order-2 md:order-1">
+          <img src="./src/assets/images/feature-illustration-1.jpg" alt="Features" class="feature-image" />
+        </div>
+
+        <!-- Texto -->
+        <div class="feature-content order-1 md:order-2">
+          <h2 id="feature-title1" class="feature-title">Simplifica tus finanzas como nunca antes</h2>
+          <p id="feature-description1" class="feature-description">
+            Nuestra herramienta está diseñada para maximizar tu eficiencia financiera:
+          </p>
+          <ul class="feature-list">
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span id="feature-item1">Cálculo automático de TCEA</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span id="feature-item2">Reportes financieros claros</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span id="feature-item3">Controla tu cartera</span>
+            </li>
+            <li>
+            <span class="icon-check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+              <span id="feature-item4">Optimiza tus finanzas</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2-col items-center">
+        <!-- Texto -->
+        <div class="feature-content order-1 md:order-1">
+          <h2 id="feature-title2" class="feature-title">Toma el control de tu flujo de caja</h2>
+          <p id="feature-description2" class="feature-description">
+            Nuestra plataforma te permite tener claridad total sobre cada movimiento:
+          </p>
+          <ul class="feature-list">
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span id="feature-item5">Seguimiento de pagos</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span id="feature-item6">Alertas personalizadas</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span id="feature-item7">Proyecciones en tiempo real</span>
+            </li>
+            <li>
+        <span class="icon-check">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+              <span id="feature-item8">Exporta reportes fácilmente</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Imagen -->
+        <div class="feature-image-wrapper order-2 md:order-2">
+          <img src="./src/assets/images/feature-illustration-2.jpg" alt="Flujo de caja" class="feature-image" />
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="how-it-works" class="how-it-works-section">
+
+    <div class="container-center text-center">
+      <h2 id="howItWorks-title" class="how-it-works-title">¿Cómo funciona?</h2>
+      <p id="howItWorks-description" class="how-it-works-subtitle">Te mostramos lo simple que es comenzar a optimizar tus finanzas</p>
+    </div>
+
+    <div class="container-center how-it-works-grid">
+      <!-- Card 1 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-sign-up.svg" alt="Registro" class="card-icon-img" />
+        <div class="card-content">
+          <h3 id="howItWorks-subtitle1" class="card-title">Regístrate</h3>
+          <p id="howItWorks-description1" class="card-description">Crea tu cuenta en minutos y accede al panel principal al instante.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-data-entry.svg" alt="Datos personales" class="card-icon-img" />
+        <div class="card-content">
+          <h3 id="howItWorks-subtitle2" class="card-title">Agrega tus datos</h3>
+          <p id="howItWorks-description2" class="card-description">Introduce tu información financiera y preferencias de cuenta.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="how-it-works-card">
+        <img src="src/assets/icons/icon-report.svg" alt="Reportes y análisis" class="card-icon-img" />
+        <div class="card-content">
+          <h3 id="howItWorks-subtitle3" class="card-title">Visualiza resultados</h3>
+          <p id="howItWorks-description3" class="card-description">Obtén reportes y recomendaciones personalizadas.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="highlighted-message" class="highlighted-message-section">
+
+    <div class="container-center text-center">
+
+      <hr class="highlighted-line" />
+
+      <div class="container-center highlighted-message-grid">
+        <h2 id="message-title" class="highlighted-title">
+          Demy hace las labores manuales como un pan<br>comido
+        </h2>
+        <p id="message-description" class="highlighted-subtitle">
+          Dile adiós al excel y a las finanzas manuales, te ofrece consejos personalizados y te guía hacia tus metas económicas de forma sencilla y segura.
+        </p>
+      </div>
+
+      <hr class="highlighted-line" />
+
+    </div>
+  </section>
+
+<!--  <section id="about-product" class="about-product-section">
+    <div class="container-center">
+      <div class="about-product-grid">
+
+        &lt;!&ndash; Video &ndash;&gt;
+        <div class="about-product-video">
+          <iframe
+                  src="https://www.youtube.com/embed/I__Exh8g3Ao"
+                  title="Sobre el producto - Video"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="video-iframe"
+          ></iframe>
+        </div>
+
+        &lt;!&ndash; Texto &ndash;&gt;
+        <div class="about-product-text">
+          &lt;!&ndash;<p class="about-product-subtitle">Sobre el producto</p>&ndash;&gt;
+          <h2 id="aboutProduct-title" class="about-product-title">Conoce la plataforma</h2>
+          <p id="aboutProduct-description1" class="about-product-description">
+            Demy automatiza la gestión académica: matrículas, horarios, pagos y seguimiento.
+          </p>
+          <p id="aboutProduct-description2" class="about-product-description mt-4">
+            Diseñado para academias que quieren optimizar procesos sin perder el enfoque pedagógico.
+          </p>
+          <p id="aboutProduct-description3" class="about-product-description mt-4">
+            Gestionar tu academia nunca fue tan fácil.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+  <section id="testimonials" class="testimonials-section">
+    <div class="container-center text-center">
+      <div class="testimonial-title-wrapper">
+        <img src="src/assets/icons/quote.svg" alt="Quote Left" class="quote-icon quote-icon-left" />
+        <h2 id="testimonials-title" class="testimonial-title">
+          El mejor servicio financiero de todos
+        </h2>
+        <img src="src/assets/icons/quote.svg" alt="Quote Right" class="quote-icon" />
+      </div>
+      <p id="testimonials-description" class="how-it-works-subtitle">Así como ellos, tú también optimiza tu negocio. Fácil. En un instante.</p>
+    </div>
+
+    <div class="testimonials-grid container-center">
+      <!-- Testimonio 1 -->
+      <div class="testimonial-card">
+        <p id="testimonials-testimony1" class="testimonial-text">
+          “Me ayudó a organizar mis finanzas personales en tiempo récord”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-1.jpg" alt="Foto de Laura" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Ernesto Fernández</p>
+            <p class="testimonial-role">Emprendedor</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="testimonial-card wide hidden md:block">
+        <p id="testimonials-testimony2"  class="testimonial-text">
+          “Me ayudó a organizar mis finanzas personales en tiempo récord. ¡Recomendadísimo!”
+          Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-2.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Eric Riva</p>
+            <p id="testimonials-role2" class="testimonial-role">Director de Academia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="testimonial-card">
+        <p id="testimonials-testimony3"  class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-3.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Elmer Hernández</p>
+            <p  class="testimonial-role">Consultor financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 4 -->
+      <div class="testimonial-card">
+        <p id="testimonials-testimony4"  class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-4.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Alexa Domínguez</p>
+            <p class="testimonial-role">Coordinadora de Academia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 5 -->
+      <div class="testimonial-card tall hidden md:block">
+        <p  id="testimonials-testimony5" class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.
+          ¡Gracias demy por todo! No se que mas poner aqui para rellenar, gracias.
+          Hola esto es un texto de relleno jajaja full chow con ese profe ponce,
+          No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+          ¡Recomendadísimo!
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-5.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Martha Jiménez</p>
+            <p class="testimonial-role">Administradora de Academia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 6 -->
+      <div class="testimonial-card wide hidden md:block">
+        <p id="testimonials-testimony6"  class="testimonial-text">
+          “No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”
+        </p>
+        <div class="testimonial-footer">
+          <img src="./src/assets/images/avatar-6.jpg" alt="Foto de Juan" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <p class="testimonial-name">Juan Pérez</p>
+            <p class="testimonial-role">Ingeniero financiero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agrega más testimonios si deseas -->
+    </div>
+  </section>
+
+  <section id="about-us" class="about-us-section">
+    <div class="container-center">
+      <div class="text-center mb-12">
+        <h2 id="aboutTeam-title1" class="section-title about-us-title">Conoce al equipo</h2>
+        <p id="aboutTeam-description1" class="section-subtitle">Profesionales comprometidos con transformar la educación</p>
+      </div>
+
+      <div class="about-us-grid">
+        <!-- Bloque 1 -->
+        <div class="about-card">
+          <img src="src/assets/images/member-salim.JPG" alt="Foto de Salim" class="member-photo" />
+          <p class="member-name">Salim Ramirez</p>
+          <p class="member-role">Project Manager</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-paul.JPG" alt="Foto de Paul" class="member-photo" />
+          <p class="member-name">Paul Sulca</p>
+          <p class="member-role">Product Owner</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-daniel.JPG" alt="Foto de Daniel" class="member-photo" />
+          <p class="member-name">Daniel Crispin</p>
+          <p class="member-role">Scrum Master</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-diego.JPG" alt="Foto de Diego" class="member-photo" />
+          <p class="member-name">Diego Vilca</p>
+          <p class="member-role">Software Architect</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 5 -->
+        <div class="about-card">
+          <img src="./src/assets/images/member-andrea.JPG" alt="Foto de Andrea" class="member-photo" />
+          <p class="member-name">Andrea Aponte</p>
+          <p class="member-role">UX/UI Designer</p>
+          <div class="member-socials">
+            <a href="https://x.com/usuario" target="_blank" aria-label="X">
+              <!-- SVG de X -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" aria-label="LinkedIn">
+              <!-- SVG de Linkedin -->
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--<section id="about-team" class="about-team-section">
+    <div class="container-center">
+      <div class="about-team-grid">
+
+        &lt;!&ndash; Texto &ndash;&gt;
+        <div class="about-team-text">
+          <h2 id="aboutTeam-title2" id="about-the-team-title" class="about-team-title">
+            Nuestra historia
+          </h2>
+          <p id="aboutTeam-description2" class="about-team-description">
+            En Demy, creemos que la educación merece herramientas simples, potentes y humanas.
+          </p>
+          <p id="aboutTeam-description3" class="about-team-description mt-4">
+            Nuestro equipo combina experiencia tecnológica y compromiso pedagógico para ayudarte a transformar tu academia.
+          </p>
+        </div>
+
+        &lt;!&ndash; Video &ndash;&gt;
+        <div class="about-team-video">
+          <iframe
+                  src="https://www.youtube.com/embed/TQvLvAzlZCs"
+                  title="Sobre el equipo - Video"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="video-iframe"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+  <section id="pricing" class="pricing-section">
+    <div class="container-center">
+      <div class="section-title">
+
+        <!-- Título -->
+        <header class="pricing-header">
+          <h2 id="pricing-title" class="pricing-title">The perfect plan for you</h2>
+          <p id="pricing-description" class="pricing-description">
+            Optimize the management of educational and sports academies through an all-in-one platform that streamlines administration and improves operational efficiency.
+          </p>
+        </header>
+
+        <!-- Tarjetas -->
+        <div class="pricing-grid">
+
+          <!-- Essentials -->
+          <div id="essential-card" class="pricing-card">
+            <h3 id="essential-title" class="pricing-plan-title">Essentials</h3>
+            <p class="pricing-plan-price">
+              <span id="essential-price" class="pricing-price">$29.90</span>
+              <span id="essential-price_per_month" class="pricing-price-note">/month</span>
+            </p>
+            <p id="starter-description" class="pricing-card-desc">For small academies.</p>
+            <ul id="essential-features" role="list" class="pricing-card-ul">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_1">1 location</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_2">Up to 100 students</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_3">Up to 10 teachers</span>
+              </li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="essential-features-feature_4">Enrollment and payment management</span>
+              </li>
+            </ul>
+            <a href="#"
+               class="pricing-btn"
+               id="get-started">
+              Get started today
+            </a>
+          </div>
+
+          <!-- Pro -->
+          <div id="pro-card" class="pricing-card pricing-card-featured">
+            <div class="pricing-badge">
+              <span id="most-popular" class="pricing-badge-label">Most Popular</span>
+            </div>
+            <h3 id="pro-title" class="pricing-plan-title">Pro</h3>
+            <p class="pricing-plan-price">
+              <span id="pro-price" class="pricing-price">$59.90</span>
+              <span id="pro-price-per-month" class="pricing-price-note">/month</span>
+            </p>
+            <p id="pro-description" class="pricing-card-desc">For medium-sized academies.</p>
+            <ul id="hobby-features" role="list" class="pricing-card-ul">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_1">Up to 2 locations</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_2">Up to 500 students</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_3">Up to 50 teachers</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="pro-features-feature_4">Enrollment and payment management</span></li>
+            </ul>
+            <a href="#"
+               class="pricing-btn"
+               id="pro-get-started">
+              Get started today
+            </a>
+          </div>
+
+          <!-- Elite -->
+          <div id="elite-card" class="pricing-card-elite">
+            <h3 id="elite-title" class="pricing-card-elite-title">Elite</h3>
+            <p class="pricing-plan-price">
+              <span id="elite-price" class="pricing-price">$199.90</span>
+              <span id="elite-price_per_month" class="pricing-price-note">/month</span>
+            </p>
+            <p id="elite-description" class="pricing-card-desc">For large academies.</p>
+            <ul id="enterprise-features" role="list" class="pricing-card-ul">
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_1">Up to 2000 students</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_2">Up to 200 teachers</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_3">Priority support</span></li>
+              <li class="pricing-card-li">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 mt-1 pricing-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                <span id="elite-features-feature_4">Enrollment and payment management</span></li>
+            </ul>
+            <a href="#"
+               class="pricing-btn-elite"
+               id="elite-get-started">
+              Get started today
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container-center">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16">
+          <h2 id="faq-heading" class="faq-title">
+            Frequently asked questions
+          </h2>
+        </div>
+
+        <div class="accordion-group" data-accordion="default-accordion">
+          <!-- Primer Accordion -->
+          <div class="accordion py-8 px-6 border-b border-solid border-medium-gray transition-all duration-500 rounded-2xl hover:bg-secondary-warm-2 accordion-active:bg-secondary-warm-2 active" id="faq-heading-one">
+            <button class="accordion-toggle group inline-flex items-center justify-between leading-8 text-secondary w-full transition duration-500 text-left hover:text-primary accordion-active:font-medium accordion-active:text-primary" aria-controls="faq-collapse-one">
+              <h3 id="faq-question-one" class="subtitle-1">How can I automate student enrollment and payment management?</h3>
+              <svg class="text-secondary-dark-3 transition duration-500 group-hover:text-primary accordion-active:text-primary accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <div id="faq-collapse-one" class="accordion-content w-full px-0 overflow-hidden" aria-labelledby="faq-heading-one">
+              <p id="faq-answer-one" class="body-1 text-secondary-dark-2 leading-6">
+                You can use our platform to efficiently manage student enrollments, track payments, and set up automatic reminders to reduce overdue payments, all from a single place, quickly and securely.
+              </p>
+            </div>
+          </div>
+
+          <!-- Segundo Accordion -->
+          <div class="accordion py-8 px-6 border-b border-solid border-medium-gray transition-all duration-500 rounded-2xl hover:bg-secondary-warm-2 accordion-active:bg-secondary-warm-2" id="faq-heading-two">
+            <button class="accordion-toggle group inline-flex items-center justify-between leading-8 text-secondary w-full transition duration-500 text-left hover:text-primary accordion-active:text-primary" aria-controls="faq-collapse-two">
+              <h3 id="faq-question-two" class="subtitle-1">What tools does Demy provide for scheduling and room assignments?</h3>
+              <svg class="text-secondary-dark-3 transition duration-500 group-hover:text-primary accordion-active:text-primary accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <div id="faq-collapse-two" class="accordion-content w-full px-0 overflow-hidden" aria-labelledby="faq-heading-two">
+              <p id="faq-answer-two" class="body-1 text-secondary-dark-2 leading-6">
+                Our platform allows you to automatically assign schedules and classrooms, optimizing the administrative and teaching staff's workload. Users can see real-time updates on schedules and assignments.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tercer Accordion -->
+          <div class="accordion py-8 px-6 border-b border-solid border-medium-gray transition-all duration-500 rounded-2xl hover:bg-secondary-warm-2 accordion-active:bg-secondary-warm-2" id="faq-heading-three">
+            <button class="accordion-toggle group inline-flex items-center justify-between leading-8 text-secondary w-full transition duration-500 text-left hover:text-primary accordion-active:text-primary" aria-controls="faq-collapse-three">
+              <h3 id="faq-question-three" class="subtitle-1">How can I track student attendance?</h3>
+              <svg class="text-secondary-dark-3 transition duration-500 group-hover:text-primary accordion-active:text-primary accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <div id="faq-collapse-three" class="accordion-content w-full px-0 overflow-hidden" aria-labelledby="faq-heading-three">
+              <p id="faq-answer-three" class="body-1 text-secondary-dark-2 leading-6">
+                Demy includes an integrated attendance tracking system that allows you to record and check student attendance easily. This system generates detailed reports to help you monitor student performance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cuarto Accordion -->
+          <div class="accordion py-8 px-6 transition-all duration-500 rounded-2xl hover:bg-secondary-warm-2 accordion-active:bg-secondary-warm-2" id="faq-heading-four">
+            <button class="accordion-toggle group inline-flex items-center justify-between leading-8 text-secondary w-full transition duration-500 text-left hover:text-primary accordion-active:text-primary" aria-controls="faq-collapse-four">
+              <h3 id="faq-question-four" class="subtitle-1">How does Demy handle user support and training for administrators and teachers?</h3>
+              <svg class="text-secondary-dark-3 transition duration-500 group-hover:text-primary accordion-active:text-primary accordion-active:rotate-180" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <div id="faq-collapse-four" class="accordion-content w-full px-0 overflow-hidden" aria-labelledby="faq-heading-four">
+              <p id="faq-answer-four" class="body-1 text-secondary-dark-2 leading-6">
+                Demy provides dedicated support through email and phone, as well as comprehensive training materials for both administrators and teachers. We ensure that your team feels confident using the platform with detailed tutorials and ongoing customer service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+      <div class="container-center">
+          <div class="contact-grid">
+
+              <div class="contact-form-container">
+                  <h2 class="contact-title" id="contact-title">¿Cómo podemos ayudarte?</h2>
+                  <p class="contact-description" id="contact-description">Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.</p>
+
+                  <form action="#" method="POST" class="contact-form" id="contact-form">
+                      <div class="form-group">
+                          <label for="name" class="form-label" id="contact-name-label">Tu Nombre</label>
+                          <div class="input-with-icon">
+                              <svg class="input-icon" fill="currentColor">
+                                  <use xlink:href="/src/assets/icons/sprite.svg#icon-user"></use>
+                              </svg>
+                              <input type="text" id="name" name="name" class="form-input" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="email" class="form-label" id="contact-email-label">Tu Email</label>
+                          <div class="input-with-icon">
+                              <svg class="input-icon" fill="currentColor">
+                                  <use xlink:href="/src/assets/icons/sprite.svg#icon-email-input"></use>
+                              </svg>
+                              <input type="email" id="email" name="email" class="form-input" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="message" class="form-label" id="contact-message-label">Tu Mensaje</label>
+                          <textarea id="message" name="message" rows="4" class="form-input" placeholder="Ej: 'Hola, me gustaría agendar una demostración para mi academia...'" required></textarea>
+                      </div>
+                      <button type="submit" id="submit-button" class="btn btn-primary w-full" disabled>Enviar Mensaje</button>
+                  </form>
+
+                  <div id="success-message" class="form-message success hidden">
+                      ¡Gracias por tu mensaje! Te responderemos pronto.
+                  </div>
+                  <div id="error-message" class="form-message error hidden">
+                      Hubo un error al enviar tu mensaje. Inténtalo de nuevo.
+                  </div>
+              </div>
+
+              <div class="contact-info-container">
+                  <img src="./src/assets/images/contact-us.webp" alt="Ilustración de Contacto" class="contact-illustration">
+                  <div class="contact-details">
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-location"></use>
+                          </svg>
+                          <span>Av. Las Fresias 128, La Molina</span>
+                      </div>
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-phone"></use>
+                          </svg>
+                          <span>+51 927 230 192</span>
+                      </div>
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-email"></use>
+                          </svg>
+                          <span>contact_us@demy.com</span>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+
+  <section id="footer" class="footer-section">
+      <div class="container-center">
+          <div class="footer-container">
+              <div class="footer-main">
+                  <div class="main-top">
+                      <div class="logo">
+                          <img src="./src/assets/logos/demy-combination-mark-white.png" alt="Logo de tu App" width="120">
+                      </div>
+                      <div class="app-stores">
+                          <a href="https://play.google.com" id="footer-playstore-link" aria-label="Descargar en Google Play">
+                              <img src="https://tb-static.uber.com/prod/udam-assets/07335cd8-47d5-51a0-a07b-125195eb4cea.svg" alt="Descargar en Google Play">
+                          </a>
+                          <a href="https://www.apple.com/la/app-store/" id="footer-appstore-link" aria-label="Descargar en la App Store">
+                              <img src="https://tb-static.uber.com/prod/udam-assets/e723f2d5-90c4-5d3b-ad4d-c36fa5597879.svg" alt="Descargar en la App Store">
+                          </a>
+                      </div>
+                  </div>
+
+                  <div class="main-links">
+                      <div class="link-column">
+                          <h4 id="footer-product-title">Producto</h4>
+                          <ul>
+                              <li><a href="#features" id="footer-product-features">Características</a></li>
+                              <li><a href="#how-it-works" id="footer-product-howitworks">Cómo funciona</a></li>
+                              <li><a href="#features" id="footer-product-knowtheplatform">Conoce la plataforma</a></li>
+                              <li><a href="#pricing" id="footer-product-pricing">Precios</a></li>
+                          </ul>
+                      </div>
+                      <div class="link-column">
+                          <h4 id="footer-company-title">Empresa</h4>
+                          <ul>
+                              <li><a href="#about-us" id="footer-company-ourhistory">Nuestra historia</a></li>
+                              <li><a href="#about-us" id="footer-company-ourteam">Nuestro equipo</a></li>
+                          </ul>
+                      </div>
+                      <div class="link-column">
+                          <h4 id="footer-support-title">Soporte</h4>
+                          <ul>
+                              <li><a href="#faq" id="footer-support-faq">Preguntas Frecuentes</a></li>
+                              <li><a href="#contact" id="footer-support-contact">Contáctanos</a></li>
+                          </ul>
+                      </div>
+                      <div class="link-column">
+                          <h4 id="footer-legal-title">Legal</h4>
+                          <ul>
+                              <li><a href="#" id="terms-modal-trigger">Términos y condiciones</a></li>
+                              <li><a href="#" id="privacy-modal-trigger">Política de privacidad</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="footer-legal">
+              <p id="footer-copyright">&copy; 2025 Nistra. Todos los derechos reservados.</p>
+              <div class="social-icons">
+                  <a href="https://x.com" aria-label="X" id="footer-social-x">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                  </a>
+                  <a href="https://instagram.com/" aria-label="Instagram" id="footer-social-instagram">
+                      <svg width="24" height="24" viewBox="0 0 448 512" fill="white">
+                          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                      </svg>
+                  </a>
+                  <a href="https://facebook.com/" aria-label="Facebook" id="footer-social-facebook">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div id="terms-modal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 id="terms-modal-title">Términos y Condiciones</h2>
+              <button class="modal-close" id="terms-modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+              <h3 id="terms-title-1">1. Aceptación de los Términos</h3>
+              <p id="terms-p-1">Al acceder y utilizar la plataforma Demy, usted acepta estar sujeto a estos términos y condiciones de uso. Demy es una plataforma de gestión académica diseñada para optimizar la administración de academias, centros educativos y organizaciones de enseñanza.</p>
+
+              <h3 id="terms-title-2">2. Descripción del Servicio</h3>
+              <p id="terms-p-2">Demy proporciona herramientas de gestión académica que incluyen:</p>
+              <ul>
+                  <li id="terms-li-2-1">Gestión de matrículas y estudiantes</li>
+                  <li id="terms-li-2-2">Control de horarios y clases</li>
+                  <li id="terms-li-2-3">Administración de pagos y facturación</li>
+                  <li id="terms-li-2-4">Seguimiento académico y reportes</li>
+                  <li id="terms-li-2-5">Comunicación con estudiantes y padres de familia</li>
+                  <li id="terms-li-2-6">Gestión de profesores y personal administrativo</li>
+              </ul>
+
+              <h3 id="terms-title-3">3. Cuentas de Usuario</h3>
+              <p id="terms-p-3">Para acceder a los servicios de Demy, debe crear una cuenta proporcionando information precisa y actualizada. Es responsable de mantener la confidencialidad de su contraseña y de todas las actividades que ocurran bajo su cuenta. Debe notificarnos inmediatamente cualquier uso no autorizado de su cuenta.</p>
+
+              <h3 id="terms-title-4">4. Uso Aceptable</h3>
+              <p id="terms-p-4">Usted se compromete a utilizar Demy únicamente para fines legítimos de gestión académica. Está prohibido:</p>
+              <ul>
+                  <li id="terms-li-4-1">Usar la plataforma para actividades ilegales o no autorizadas</li>
+                  <li id="terms-li-4-2">Interferir con el funcionamiento normal de la plataforma</li>
+                  <li id="terms-li-4-3">Intentar acceder a cuentas de otros usuarios</li>
+                  <li id="terms-li-4-4">Compartir información falsa o engañosa</li>
+                  <li id="terms-li-4-5">Violar los derechos de propiedad intelectual</li>
+              </ul>
+
+              <h3 id="terms-title-5">5. Datos y Contenido</h3>
+              <p id="terms-p-5">Usted conserva todos los derechos sobre los datos académicos que ingrese en Demy. Al usar nuestros servicios, nos otorga una licencia limitada para procesar, almacenar y respaldar sus datos únicamente para proporcionar el servicio. Nos comprometemos a mantener la confidencialidad de la información académica sensible.</p>
+
+              <h3 id="terms-title-6">6. Facturación y Pagos</h3>
+              <p id="terms-p-6">Los servicios de Demy están disponibles bajo planes de suscripción mensual o anual. Los pagos se procesan de forma segura y se renuevan automáticamente a menos que cancele su suscripción. Puede cancelar su suscripción en cualquier momento desde su panel de control.</p>
+
+              <h3 id="terms-title-7">7. Limitación de Responsabilidad</h3>
+              <p id="terms-p-7">Demy se proporciona "tal como está". No garantizamos que el servicio esté libre de errores o interrupciones. Nuestra responsabilidad se limita al monto pagado por el servicio en los 12 meses anteriores al evento que dio lugar al reclamo.</p>
+
+              <h3 id="terms-title-8">8. Terminación</h3>
+              <p id="terms-p-8">Podemos suspender o terminar su acceso a Demy si viola estos términos. Al terminar el servicio, sus datos permanecerán disponibles para exportación durante 30 días, después de los cuales serán eliminados permanentemente.</p>
+
+              <h3 id="terms-title-9">9. Modificaciones</h3>
+              <p id="terms-p-9">Nos reservamos el derecho de modificar estos términos. Los cambios significativos serán notificados con 30 días de anticipación. El uso continuado del servicio constituye aceptación de los nuevos términos.</p>
+
+              <h3 id="terms-title-10">10. Contacto</h3>
+              <p id="terms-p-10">Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en: contact_us@demy.com o al +51 927 230 192</p>
+
+              <p><strong id="terms-update-label">Última actualización:</strong> <span id="terms-update-date">Enero 2025</span></p>
+          </div>
+      </div>
+  </div>
+
+  <div id="privacy-modal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 id="privacy-modal-title">Política de Privacidad</h2>
+              <button class="modal-close" id="privacy-modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+              <h3 id="privacy-title-1">1. Información que Recopilamos</h3>
+              <p id="privacy-p-1">En Demy, recopilamos información necesaria para proporcionar nuestros servicios de gestión académica:</p>
+              <ul>
+                  <li id="privacy-li-1-1"><strong>Información de la institución:</strong> Nombre, dirección, datos de contacto, información fiscal</li>
+                  <li id="privacy-li-1-2"><strong>Datos de usuarios administrativos:</strong> Nombres, correos electrónicos, roles y permisos</li>
+                  <li id="privacy-li-1-3"><strong>Información de estudiantes:</strong> Datos académicos, contacto, historial de pagos (solo con autorización)</li>
+                  <li id="privacy-li-1-4"><strong>Datos de profesores:</strong> Información profesional, horarios, asignaturas</li>
+                  <li id="privacy-li-1-5"><strong>Información de uso:</strong> Actividad en la plataforma, preferencias, logs de acceso</li>
+              </ul>
+
+              <h3 id="privacy-title-2">2. Cómo Utilizamos su Información</h3>
+              <p id="privacy-p-2">Utilizamos la información recopilada exclusivamente para:</p>
+              <ul>
+                  <li id="privacy-li-2-1">Proporcionar y mejorar los servicios de gestión académica</li>
+                  <li id="privacy-li-2-2">Gestionar matrículas, horarios y pagos</li>
+                  <li id="privacy-li-2-3">Generar reportes académicos y administrativos</li>
+                  <li id="privacy-li-2-4">Facilitar la comunicación entre la institución y estudiantes</li>
+                  <li id="privacy-li-2-5">Mantener la seguridad y integridad de la plataforma</li>
+                  <li id="privacy-li-2-6">Cumplir con obligaciones legales y regulatorias</li>
+              </ul>
+
+              <h3 id="privacy-title-3">3. Protección de Datos Académicos</h3>
+              <p id="privacy-p-3">Los datos académicos son especialmente sensibles. Implementamos medidas adicionales de seguridad:</p>
+              <ul>
+                  <li id="privacy-li-3-1">Encriptación de extremo a extremo para datos sensibles</li>
+                  <li id="privacy-li-3-2">Acceso restringido basado en roles y permisos</li>
+                  <li id="privacy-li-3-3">Auditorías regulares de seguridad</li>
+                  <li id="privacy-li-3-4">Respaldo seguro y redundante de la información</li>
+                  <li id="privacy-li-3-5">Cumplimiento con normativas de protección de datos educativos</li>
+              </ul>
+
+              <h3 id="privacy-title-4">4. Compartir Información</h3>
+              <p id="privacy-p-4">No vendemos ni compartimos datos académicos con terceros, excepto:</p>
+              <ul>
+                  <li id="privacy-li-4-1">Con autoridades educativas cuando sea legalmente requerido</li>
+                  <li id="privacy-li-4-2">Con proveedores de servicios técnicos bajo estrictos acuerdos de confidencialidad</li>
+                  <li id="privacy-li-4-3">Con el consentimiento explícito de la institución educativa</li>
+                  <li id="privacy-li-4-4">Para cumplir con órdenes judiciales o requerimientos legales</li>
+              </ul>
+
+              <h3 id="privacy-title-5">5. Retención de Datos</h3>
+              <p id="privacy-p-5">Conservamos los datos según los siguientes períodos:</p>
+              <ul>
+                  <li id="privacy-li-5-1"><strong>Datos académicos:</strong> Mínimo 5 años (según normativa educativa)</li>
+                  <li id="privacy-li-5-2"><strong>Datos de facturación:</strong> 7 años (requerimientos fiscales)</li>
+                  <li id="privacy-li-5-3"><strong>Logs de acceso:</strong> 2 años</li>
+                  <li id="privacy-li-5-4"><strong>Datos de contacto:</strong> Hasta que se solicite la eliminación</li>
+              </ul>
+
+              <h3 id="privacy-title-6">6. Sus Derechos</h3>
+              <p id="privacy-p-6">Como institución educativa, usted tiene derecho a:</p>
+              <ul>
+                  <li id="privacy-li-6-1">Acceder y exportar todos sus datos académicos</li>
+                  <li id="privacy-li-6-2">Corregir información inexacta</li>
+                  <li id="privacy-li-6-3">Solicitar la portabilidad de datos</li>
+                  <li id="privacy-li-6-4">Restringir el procesamiento de ciertos datos</li>
+                  <li id="privacy-li-6-5">Solicitar la eliminación de datos (sujeto a obligaciones legales)</li>
+                  <li id="privacy-li-6-6">Recibir notificación de cualquier brecha de seguridad</li>
+              </ul>
+
+              <h3 id="privacy-title-7">7. Transferencias Internacionales</h3>
+              <p id="privacy-p-7">Sus datos pueden ser procesados en servidores ubicados fuera de su país. Garantizamos que cualquier transferencia cumple con los estándares internacionales de protección de datos y utiliza cláusulas contractuales estándar aprobadas.</p>
+
+              <h3 id="privacy-title-8">8. Menores de Edad</h3>
+              <p id="privacy-p-8">Cuando procesamos datos de estudiantes menores de edad, requerimos el consentimiento de padres o tutores legales. Los datos de menores reciben protección adicional y se procesan únicamente para fines educativos legítimos.</p>
+
+              <h3 id="privacy-title-9">9. Cambios a esta Política</h3>
+              <p id="privacy-p-9">Notificaremos cambios significativos con 30 días de anticipación. Los cambios menores se publicarán en la plataforma. El uso continuado constituye aceptación de la política actualizada.</p>
+
+              <h3 id="privacy-title-10">10. Contacto y Oficial de Protección de Datos</h3>
+              <p id="privacy-p-10">Para consultas sobre privacidad o para ejercer sus derechos, contáctenos en: contact_us@demy.com o al +51 927 230 192</p>
+              <p id="privacy-p-11"><strong>Oficial de Protección de Datos:</strong> dpo@demy.com</p>
+
+              <p><strong id="privacy-update-label">Última actualización:</strong> <span id="privacy-update-date">Enero 2025</span></p>
+          </div>
+      </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+
   </body>
 </html>

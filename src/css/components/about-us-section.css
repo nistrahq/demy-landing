@@ -1,0 +1,81 @@
+@layer components {
+    .about-us-section {
+        background-color: var(--color-white);
+    }
+
+    /* Grid más flexible (5 por fila en desktop) */
+    .about-us-grid {
+        @apply px-8 md:px-0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* 🔹 antes 240px */
+        gap: 1.25rem;
+        justify-items: center;
+    }
+
+    .about-us-title {
+        font-family: var(--font-heading);
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Card alargada */
+    .about-card {
+        @apply flex flex-col items-center text-center;
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 1rem;
+        padding: 1.5rem 1rem; /* 🔹 más alta visualmente */
+        width: 100%;
+        max-width: 220px; /* 🔹 limita el ancho */
+        min-height: 260px; /* 🔹 más larga */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .about-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+    }
+
+    .member-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 9999px;
+        object-fit: cover;
+        margin-bottom: .75rem;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    .member-name {
+        @apply font-semibold text-base;
+        color: var(--color-text);
+        margin-bottom: .25rem;
+    }
+
+    .member-role {
+        @apply text-sm;
+        color: var(--color-muted);
+    }
+
+    .member-socials {
+        @apply flex items-center justify-center gap-6 mt-4 md:mt-6 w-full;
+    }
+
+    .member-socials a {
+        @apply inline-flex items-center justify-center;
+    }
+
+    .social-icon {
+        @apply w-6 h-6 text-gray-500 transition-colors duration-200;
+    }
+
+    .member-socials a:hover .social-icon {
+        @apply text-primary;
+    }
+}
