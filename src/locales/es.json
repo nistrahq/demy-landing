@@ -246,5 +246,49 @@
       "label": "Última actualización:",
       "date": "Enero 2025"
     }
+  },
+  "pricing": {
+    "title": "El plan perfecto para ti",
+    "description": "Optimiza la gestión de academias educativas y deportivas mediante una plataforma todo en uno que agiliza la administración y mejora la eficiencia operativa."
+  },
+  "essential": {
+    "title": "Esencial",
+    "price": "$29.90",
+    "price_per_month": "/mes",
+    "description": "Para academias pequeñas.",
+    "features": {
+      "feature_1": "1 sede",
+      "feature_2": "Hasta 100 estudiantes",
+      "feature_3": "Hasta 10 profesores",
+      "feature_4": "Gestión de matrículas y pagos"
+    },
+    "get_started": "Comienza hoy"
+  },
+  "pro": {
+    "most_popular": "Más popular",
+    "title": "Pro",
+    "price": "$59.90",
+    "price_per_month": "/mes",
+    "description": "Para academias medianas.",
+    "features": {
+      "feature_1": "Hasta 2 sedes",
+      "feature_2": "Hasta 500 estudiantes",
+      "feature_3": "Hasta 50 profesores",
+      "feature_4": "Gestión de matrículas y pagos"
+    },
+    "get_started": "Comienza hoy"
+  },
+  "elite": {
+    "title": "Elite",
+    "price": "$199.90",
+    "price_per_month": "/mes",
+    "description": "Para academias grandes.",
+    "features": {
+      "feature_1": "Hasta 2000 estudiantes",
+      "feature_2": "Hasta 200 profesores",
+      "feature_3": "Soporte prioritario",
+      "feature_4": "Gestión de matrículas y pagos"
+    },
+    "get_started": "Comienza hoy"
   }
 }
