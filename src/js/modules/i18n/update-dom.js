@@ -5,8 +5,6 @@ export function updateTexts(data) {
     getElement("hero-subtitle").textContent = data.hero.subtitle;
     getElement("nav-contact").textContent = data.nav.contact;
     getElement("hero-description").textContent = data.hero.description;
-    getElement("hero-buttonStartNow").textContent = data.hero.buttonStartNow;
-    getElement("hero-buttonPricing").textContent = data.hero.buttonPricing;
 
     //Feature section
     getElement("feature-title1").textContent = data.feature.title1;

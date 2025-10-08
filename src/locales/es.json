@@ -2,9 +2,7 @@
   "hero": {
     "title": "Tu viaje a un mejor futuro empieza aquí",
     "subtitle": "Todo en uno",
-    "description": "Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad.",
-    "buttonStartNow": "Comienza ahora",
-    "buttonPricing": "Ver planes y precios"
+    "description": "Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad."
   },
   "nav": {
     "contact": "Contáctanos"

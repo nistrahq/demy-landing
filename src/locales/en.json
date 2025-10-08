@@ -2,9 +2,7 @@
   "hero": {
     "title": "Your journey to better future starts here",
     "subtitle": "All in one",
-    "description": "Automatically calculate your APR, generate reports, and easily improve your financial management.",
-    "buttonStartNow": "Start now",
-    "buttonPricing": "See Plans and Prices"
+    "description": "Automatically calculate your APR, generate reports, and easily improve your financial management."
   },
   "nav": {
     "contact": "Contact Us"
