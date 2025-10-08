@@ -12,6 +12,17 @@
         justify-items: center;
     }
 
+    .about-us-title {
+        font-family: var(--font-heading);
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     /* Card alargada */
     .about-card {
         @apply flex flex-col items-center text-center;
@@ -32,8 +43,8 @@
     }
 
     .member-photo {
-        width: 90px;
-        height: 90px;
+        width: 120px;
+        height: 120px;
         border-radius: 9999px;
         object-fit: cover;
         margin-bottom: .75rem;
@@ -53,7 +64,11 @@
     }
 
     .member-socials {
-        @apply flex gap-6 mt-4 md:mt-6;
+        @apply flex items-center justify-center gap-6 mt-4 md:mt-6 w-full;
+    }
+
+    .member-socials a {
+        @apply inline-flex items-center justify-center;
     }
 
     .social-icon {
