@@ -1,10 +1,64 @@
 {
   "hero": {
     "title": "Tu viaje a un mejor futuro empieza aquí",
-    "subtitle": "Todo en uno"
+    "subtitle": "Todo en uno",
+    "description": "Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad.",
+    "buttonStartNow": "Comienza ahora",
+    "buttonPricing": "Ver planes y precios"
   },
   "nav": {
     "contact": "Contáctanos"
+  },
+  "feature": {
+    "title1": "Simplifica tus finanzas como nunca antes",
+    "description1": "Nuestra herramienta está diseñada para maximizar tu eficiencia financiera:",
+    "item1": "Cálculo automático de TCEA",
+    "item2": "Reportes financieros claros",
+    "item3": "Controla tu cartera",
+    "item4": "Optimiza tus finanzas",
+    "title2": "Toma el control de tu flujo de caja",
+    "description2": "Nuestra plataforma te permite tener claridad total sobre cada movimiento:",
+    "item5": "Seguimiento de pagos",
+    "item6": "Alertas personalizadas",
+    "item7": "Proyecciones en tiempo real",
+    "item8": "Exporta reportes fácilmente"
+  },
+  "howItWorks": {
+    "title": "¿Cómo funciona?",
+    "description": "Te mostramos lo simple que es comenzar a optimizar tus finanzas",
+    "subtitle1": "Regístrate",
+    "description1": "Crea tu cuenta en minutos y accede al panel principal al instante.",
+    "subtitle2": "Agrega tus datos",
+    "description2": "Introduce tu información financiera y preferencias de cuenta.",
+    "subtitle3": "Visualiza resultados",
+    "description3": "Obtén reportes y recomendaciones personalizadas."
+  },
+  "message": {
+    "title": "Demy hace las labores manuales como un pan comido",
+    "description": "Dile adiós al excel y a las finanzas manuales, te ofrece consejos personalizados y te guía hacia tus metas económicas de forma sencilla y segura."
+  },
+  "aboutProduct": {
+    "title": "Conoce la plataforma",
+    "description1": "Demy automatiza la gestión académica: matrículas, horarios, pagos y seguimiento.",
+    "description2": "Diseñado para academias que quieren optimizar procesos sin perder el enfoque pedagógico.",
+    "description3": "Gestionar tu academia nunca fue tan fácil. "
+  },
+  "testimonials": {
+    "title": "El mejor servicio financiero de todos",
+    "description": "Así como ellos, tú también optimiza tu negocio. Fácil. En un instante.",
+    "testimony1": "“Me ayudó a organizar mis finanzas personales en tiempo récord”",
+    "testimony2": "“Me ayudó a organizar mis finanzas personales en tiempo récord. ¡Recomendadísimo!”. Nunca me sentí tan productivo!",
+    "testimony3": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”",
+    "testimony4": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”",
+    "testimony5": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.” ",
+    "testimony6": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo. ¡Gracias demy por todo!. No solo entendí mejor mis gastos, también ahorré más en menos tiempo.” ¡Recomendadísimo!"
+  },
+  "aboutTeam": {
+    "title1": "Conoce al equipo",
+    "description1": "Profesionales comprometidos con transformar la educación",
+    "title2": "Nuestra historia",
+    "description2": "En Demy, creemos que la educación merece herramientas simples, potentes y humanas.",
+    "description3": "Nuestro equipo combina experiencia tecnológica y compromiso pedagógico para ayudarte a transformar tu academia."
   },
   "contact": {
     "title": "¿Cómo podemos ayudarte?",
