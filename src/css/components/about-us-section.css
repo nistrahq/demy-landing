@@ -3,30 +3,48 @@
         background-color: var(--color-white);
     }
 
+    /* Grid más flexible (5 por fila en desktop) */
     .about-us-grid {
-        @apply px-8 md:px-0 gap-16 md:gap-32; /* ajustable */
+        @apply px-8 md:px-0;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        @media (min-width: 1024px) {
-            grid-template-columns: repeat(auto-fit, minmax(120px, max-content)); /* ajustable */
-        }
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* 🔹 antes 240px */
+        gap: 1.25rem;
+        justify-items: center;
     }
 
+    /* Card alargada */
     .about-card {
         @apply flex flex-col items-center text-center;
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 1rem;
+        padding: 1.5rem 1rem; /* 🔹 más alta visualmente */
+        width: 100%;
+        max-width: 220px; /* 🔹 limita el ancho */
+        min-height: 260px; /* 🔹 más larga */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .about-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.10);
     }
 
     .member-photo {
-        @apply w-auto h-auto mb-4 rounded-full; /* ajustable */
-        /*@apply w-auto h-auto*/
+        width: 90px;
+        height: 90px;
+        border-radius: 9999px;
         object-fit: cover;
-        aspect-ratio: 1 / 1;
+        margin-bottom: .75rem;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
     }
 
     .member-name {
-        @apply font-semibold text-base mb-1;
+        @apply font-semibold text-base;
         color: var(--color-text);
+        margin-bottom: .25rem;
     }
 
     .member-role {
@@ -45,5 +63,4 @@
     .member-socials a:hover .social-icon {
         @apply text-primary;
     }
-
 }

@@ -1,10 +1,251 @@
 {
   "hero": {
     "title": "Tu viaje a un mejor futuro empieza aquí",
-    "subtitle": "Todo en uno"
+    "subtitle": "Todo en uno",
+    "description": "Calcula automáticamente la TCEA, genera reportes y mejora tu gestión financiera con facilidad."
   },
   "nav": {
     "contact": "Contáctanos"
+  },
+  "feature": {
+    "title1": "Simplifica tus finanzas como nunca antes",
+    "description1": "Nuestra herramienta está diseñada para maximizar tu eficiencia financiera:",
+    "item1": "Cálculo automático de TCEA",
+    "item2": "Reportes financieros claros",
+    "item3": "Controla tu cartera",
+    "item4": "Optimiza tus finanzas",
+    "title2": "Toma el control de tu flujo de caja",
+    "description2": "Nuestra plataforma te permite tener claridad total sobre cada movimiento:",
+    "item5": "Seguimiento de pagos",
+    "item6": "Alertas personalizadas",
+    "item7": "Proyecciones en tiempo real",
+    "item8": "Exporta reportes fácilmente"
+  },
+  "howItWorks": {
+    "title": "¿Cómo funciona?",
+    "description": "Te mostramos lo simple que es comenzar a optimizar tus finanzas",
+    "subtitle1": "Regístrate",
+    "description1": "Crea tu cuenta en minutos y accede al panel principal al instante.",
+    "subtitle2": "Agrega tus datos",
+    "description2": "Introduce tu información financiera y preferencias de cuenta.",
+    "subtitle3": "Visualiza resultados",
+    "description3": "Obtén reportes y recomendaciones personalizadas."
+  },
+  "message": {
+    "title": "Demy hace las labores manuales como un pan comido",
+    "description": "Dile adiós al excel y a las finanzas manuales, te ofrece consejos personalizados y te guía hacia tus metas económicas de forma sencilla y segura."
+  },
+  "aboutProduct": {
+    "title": "Conoce la plataforma",
+    "description1": "Demy automatiza la gestión académica: matrículas, horarios, pagos y seguimiento.",
+    "description2": "Diseñado para academias que quieren optimizar procesos sin perder el enfoque pedagógico.",
+    "description3": "Gestionar tu academia nunca fue tan fácil. "
+  },
+  "testimonials": {
+    "title": "El mejor servicio financiero de todos",
+    "description": "Así como ellos, tú también optimiza tu negocio. Fácil. En un instante.",
+    "testimony1": "“Me ayudó a organizar mis finanzas personales en tiempo récord”",
+    "testimony2": "“Me ayudó a organizar mis finanzas personales en tiempo récord. ¡Recomendadísimo!”. Nunca me sentí tan productivo!",
+    "testimony3": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”",
+    "testimony4": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.”",
+    "testimony5": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo.” ",
+    "testimony6": "“No solo entendí mejor mis gastos, también ahorré más en menos tiempo. ¡Gracias demy por todo!. No solo entendí mejor mis gastos, también ahorré más en menos tiempo.” ¡Recomendadísimo!"
+  },
+  "aboutTeam": {
+    "title1": "Conoce al equipo",
+    "description1": "Profesionales comprometidos con transformar la educación",
+    "title2": "Nuestra historia",
+    "description2": "En Demy, creemos que la educación merece herramientas simples, potentes y humanas.",
+    "description3": "Nuestro equipo combina experiencia tecnológica y compromiso pedagógico para ayudarte a transformar tu academia."
+  },
+  "contact": {
+    "title": "¿Cómo podemos ayudarte?",
+    "description": "Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.",
+    "nameLabel": "Tu Nombre",
+    "emailLabel": "Tu Email",
+    "messageLabel": "Tu Mensaje",
+    "messagePlaceholder": "Ej: 'Hola, me gustaría agendar una demostración para mi academia...'",
+    "submitButton": "Enviar Mensaje"
+  },
+  "faq": {
+    "heading": "Preguntas frecuentes",
+    "question_one": {
+      "title": "¿Cómo puedo automatizar la inscripción de estudiantes y la gestión de pagos?",
+      "answer": "Puedes usar nuestra plataforma para gestionar de manera eficiente las inscripciones de estudiantes, registrar pagos y configurar recordatorios automáticos para reducir retrasos, todo desde un solo lugar de forma rápida y segura."
+    },
+    "question_two": {
+      "title": "¿Qué herramientas ofrece Demy para la programación y asignación de aulas?",
+      "answer": "Nuestra plataforma permite asignar horarios y aulas automáticamente, optimizando la carga administrativa y docente. Los usuarios pueden ver actualizaciones en tiempo real sobre los horarios y las asignaciones."
+    },
+    "question_three": {
+      "title": "¿Cómo puedo hacer seguimiento de la asistencia de los estudiantes?",
+      "answer": "Demy incluye un sistema integrado de control de asistencia que permite registrar y verificar fácilmente la asistencia de los estudiantes. Este sistema genera informes detallados para ayudarte a monitorear el rendimiento académico."
+    },
+    "question_four": {
+      "title": "¿Cómo maneja Demy el soporte y la capacitación de usuarios para administradores y docentes?",
+      "answer": "Demy ofrece soporte dedicado por correo electrónico y teléfono, además de materiales de capacitación completos para administradores y docentes. Nos aseguramos de que tu equipo se sienta seguro utilizando la plataforma con tutoriales detallados y atención al cliente continua."
+    }
+  },
+  "footer": {
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "howItWorks": "Cómo funciona",
+      "knowThePlatform": "Conoce la plataforma",
+      "pricing": "Precios"
+    },
+    "company": {
+      "title": "Empresa",
+      "ourHistory": "Nuestra historia",
+      "ourTeam": "Nuestro equipo"
+    },
+    "support": {
+      "title": "Soporte",
+      "faq": "Preguntas Frecuentes",
+      "contact": "Contáctanos"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Términos y condiciones",
+      "privacy": "Política de privacidad"
+    },
+    "copyright": "© 2025 Nistra. Todos los derechos reservados."
+  },
+  "termsModal": {
+    "title": "Términos y Condiciones",
+    "section1": {
+      "title": "1. Aceptación de los Términos",
+      "p": "Al acceder y utilizar la plataforma Demy, usted acepta estar sujeto a estos términos y condiciones de uso. Demy es una plataforma de gestión académica diseñada para optimizar la administración de academias, centros educativos y organizaciones de enseñanza."
+    },
+    "section2": {
+      "title": "2. Descripción del Servicio",
+      "p": "Demy proporciona herramientas de gestión académica que incluyen:",
+      "li1": "Gestión de matrículas y estudiantes",
+      "li2": "Control de horarios y clases",
+      "li3": "Administración de pagos y facturación",
+      "li4": "Seguimiento académico y reportes",
+      "li5": "Comunicación con estudiantes y padres de familia",
+      "li6": "Gestión de profesores y personal administrativo"
+    },
+    "section3": {
+      "title": "3. Cuentas de Usuario",
+      "p": "Para acceder a los servicios de Demy, debe crear una cuenta proporcionando información precisa y actualizada. Es responsable de mantener la confidencialidad de su contraseña y de todas las actividades que ocurran bajo su cuenta. Debe notificarnos inmediatamente cualquier uso no autorizado de su cuenta."
+    },
+    "section4": {
+      "title": "4. Uso Aceptable",
+      "p": "Usted se compromete a utilizar Demy únicamente para fines legítimos de gestión académica. Está prohibido:",
+      "li1": "Usar la plataforma para actividades ilegales o no autorizadas",
+      "li2": "Interferir con el funcionamiento normal de la plataforma",
+      "li3": "Intentar acceder a cuentas de otros usuarios",
+      "li4": "Compartir información falsa o engañosa",
+      "li5": "Violar los derechos de propiedad intelectual"
+    },
+    "section5": {
+      "title": "5. Datos y Contenido",
+      "p": "Usted conserva todos los derechos sobre los datos académicos que ingrese en Demy. Al usar nuestros servicios, nos otorga una licencia limitada para procesar, almacenar y respaldar sus datos únicamente para proporcionar el servicio. Nos comprometemos a mantener la confidencialidad de la información académica sensible."
+    },
+    "section6": {
+      "title": "6. Facturación y Pagos",
+      "p": "Los servicios de Demy están disponibles bajo planes de suscripción mensual o anual. Los pagos se procesan de forma segura y se renuevan automáticamente a menos que cancele su suscripción. Puede cancelar su suscripción en cualquier momento desde su panel de control."
+    },
+    "section7": {
+      "title": "7. Limitación de Responsabilidad",
+      "p": "Demy se proporciona \"tal como está\". No garantizamos que el servicio esté libre de errores o interrupciones. Nuestra responsabilidad se limita al monto pagado por el servicio en los 12 meses anteriores al evento que dio lugar al reclamo."
+    },
+    "section8": {
+      "title": "8. Terminación",
+      "p": "Podemos suspender o terminar su acceso a Demy si viola estos términos. Al terminar el servicio, sus datos permanecerán disponibles para exportación durante 30 días, después de los cuales serán eliminados permanentemente."
+    },
+    "section9": {
+      "title": "9. Modificaciones",
+      "p": "Nos reservamos el derecho de modificar estos términos. Los cambios significativos serán notificados con 30 días de anticipación. El uso continuado del servicio constituye aceptación de los nuevos términos."
+    },
+    "section10": {
+      "title": "10. Contacto",
+      "p": "Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en: contact_us@demy.com o al +51 927 230 192"
+    },
+    "lastUpdate": {
+      "label": "Última actualización:",
+      "date": "Enero 2025"
+    }
+  },
+  "privacyModal": {
+    "title": "Política de Privacidad",
+    "section1": {
+      "title": "1. Información que Recopilamos",
+      "p": "En Demy, recopilamos información necesaria para proporcionar nuestros servicios de gestión académica:",
+      "li1": "<strong>Información de la institución:</strong> Nombre, dirección, datos de contacto, información fiscal",
+      "li2": "<strong>Datos de usuarios administrativos:</strong> Nombres, correos electrónicos, roles y permisos",
+      "li3": "<strong>Información de estudiantes:</strong> Datos académicos, contacto, historial de pagos (solo con autorización)",
+      "li4": "<strong>Datos de profesores:</strong> Información profesional, horarios, asignaturas",
+      "li5": "<strong>Información de uso:</strong> Actividad en la plataforma, preferencias, logs de acceso"
+    },
+    "section2": {
+      "title": "2. Cómo Utilizamos su Información",
+      "p": "Utilizamos la información recopilada exclusivamente para:",
+      "li1": "Proporcionar y mejorar los servicios de gestión académica",
+      "li2": "Gestionar matrículas, horarios y pagos",
+      "li3": "Generar reportes académicos y administrativos",
+      "li4": "Facilitar la comunicación entre la institución y estudiantes",
+      "li5": "Mantener la seguridad y integridad de la plataforma",
+      "li6": "Cumplir con obligaciones legales y regulatorias"
+    },
+    "section3": {
+      "title": "3. Protección de Datos Académicos",
+      "p": "Los datos académicos son especialmente sensibles. Implementamos medidas adicionales de seguridad:",
+      "li1": "Encriptación de extremo a extremo para datos sensibles",
+      "li2": "Acceso restringido basado en roles y permisos",
+      "li3": "Auditorías regulares de seguridad",
+      "li4": "Respaldo seguro y redundante de la información",
+      "li5": "Cumplimiento con normativas de protección de datos educativos"
+    },
+    "section4": {
+      "title": "4. Compartir Información",
+      "p": "No vendemos ni compartimos datos académicos con terceros, excepto:",
+      "li1": "Con autoridades educativas cuando sea legalmente requerido",
+      "li2": "Con proveedores de servicios técnicos bajo estrictos acuerdos de confidencialidad",
+      "li3": "Con el consentimiento explícito de la institución educativa",
+      "li4": "Para cumplir con órdenes judiciales o requerimientos legales"
+    },
+    "section5": {
+      "title": "5. Retención de Datos",
+      "p": "Conservamos los datos según los siguientes períodos:",
+      "li1": "<strong>Datos académicos:</strong> Mínimo 5 años (según normativa educativa)",
+      "li2": "<strong>Datos de facturación:</strong> 7 años (requerimientos fiscales)",
+      "li3": "<strong>Logs de acceso:</strong> 2 años",
+      "li4": "<strong>Datos de contacto:</strong> Hasta que se solicite la eliminación"
+    },
+    "section6": {
+      "title": "6. Sus Derechos",
+      "p": "Como institución educativa, usted tiene derecho a:",
+      "li1": "Acceder y exportar todos sus datos académicos",
+      "li2": "Corregir información inexacta",
+      "li3": "Solicitar la portabilidad de datos",
+      "li4": "Restringir el procesamiento de ciertos datos",
+      "li5": "Solicitar la eliminación de datos (sujeto a obligaciones legales)",
+      "li6": "Recibir notificación de cualquier brecha de seguridad"
+    },
+    "section7": {
+      "title": "7. Transferencias Internacionales",
+      "p": "Sus datos pueden ser procesados en servidores ubicados fuera de su país. Garantizamos que cualquier transferencia cumple con los estándares internacionales de protección de datos y utiliza cláusulas contractuales estándar aprobadas."
+    },
+    "section8": {
+      "title": "8. Menores de Edad",
+      "p": "Cuando procesamos datos de estudiantes menores de edad, requerimos el consentimiento de padres o tutores legales. Los datos de menores reciben protección adicional y se procesan únicamente para fines educativos legítimos."
+    },
+    "section9": {
+      "title": "9. Cambios a esta Política",
+      "p": "Notificaremos cambios significativos con 30 días de anticipación. Los cambios menores se publicarán en la plataforma. El uso continuado constituye aceptación de la política actualizada."
+    },
+    "section10": {
+      "title": "10. Contacto y Oficial de Protección de Datos",
+      "p": "Para consultas sobre privacidad o para ejercer sus derechos, contáctenos en: contact_us@demy.com o al +51 927 230 192",
+      "p2": "<strong>Oficial de Protección de Datos:</strong> dpo@demy.com"
+    },
+    "lastUpdate": {
+      "label": "Última actualización:",
+      "date": "Enero 2025"
+    }
   },
   "pricing": {
     "title": "El plan perfecto para ti",
