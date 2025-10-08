@@ -11,6 +11,13 @@
   "pricing_anchor": "Precios",
   "faq_anchor": "Preguntas",
   "contact_anchor": "Contacto",
+  "features_anchor_mobile": "Características",
+  "how_it_works_anchor_mobile": "Pasos",
+  "testimonials_anchor_mobile": "Testimonios",
+  "about_us_anchor_mobile": "Nosotros",
+  "pricing_anchor_mobile": "Precios",
+  "faq_anchor_mobile": "Preguntas",
+  "contact_anchor_mobile": "Contacto",
   "feature": {
     "title1": "Simplifica tus procesos como nunca antes",
     "description1": "Demy está diseñada para maximizar tu eficiencia administrativa:",

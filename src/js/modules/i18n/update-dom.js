@@ -11,6 +11,13 @@ export function updateTexts(data) {
     getElement("pricing-anchor").textContent = data.pricing_anchor;
     getElement("faq-anchor").textContent = data.faq_anchor;
     getElement("contact-anchor").textContent = data.contact_anchor;
+    getElement("features-anchor-mobile").textContent = data.features_anchor_mobile;
+    getElement("how-it-works-anchor-mobile").textContent = data.how_it_works_anchor_mobile;
+    getElement("testimonials-anchor-mobile").textContent = data.testimonials_anchor_mobile;
+    getElement("about-us-anchor-mobile").textContent = data.about_us_anchor_mobile;
+    getElement("pricing-anchor-mobile").textContent = data.pricing_anchor_mobile;
+    getElement("faq-anchor-mobile").textContent = data.faq_anchor_mobile;
+    getElement("contact-anchor-mobile").textContent = data.contact_anchor_mobile;
 
     //Feature section
     getElement("feature-title1").textContent = data.feature.title1;
@@ -41,10 +48,10 @@ export function updateTexts(data) {
     getElement("message-description").textContent = data.message.description;
 
     // About the Product
-    getElement("aboutProduct-title").textContent = data.aboutProduct.title;
+/*    getElement("aboutProduct-title").textContent = data.aboutProduct.title;
     getElement("aboutProduct-description1").textContent = data.aboutProduct.description1;
     getElement("aboutProduct-description2").textContent = data.aboutProduct.description2;
-    getElement("aboutProduct-description3").textContent = data.aboutProduct.description3;
+    getElement("aboutProduct-description3").textContent = data.aboutProduct.description3;*/
 
     //Testimonials
     getElement("testimonials-title").textContent = data.testimonials.title;
@@ -57,11 +64,11 @@ export function updateTexts(data) {
     getElement("testimonials-testimony6").textContent = data.testimonials.testimony6;
 
     //About the TEAM
-    getElement("aboutTeam-title1").textContent = data.aboutTeam.title1;
+/*    getElement("aboutTeam-title1").textContent = data.aboutTeam.title1;
     getElement("aboutTeam-description1").textContent = data.aboutTeam.description1;
     getElement("aboutTeam-title2").textContent = data.aboutTeam.title2;
     getElement("aboutTeam-description2").textContent = data.aboutTeam.description2;
-    getElement("aboutTeam-description3").textContent = data.aboutTeam.description3;
+    getElement("aboutTeam-description3").textContent = data.aboutTeam.description3;*/
 
     // Contact Section
     getElement("contact-title").textContent = data.contact.title;
