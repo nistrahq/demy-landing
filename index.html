@@ -827,11 +827,74 @@
   </section>
 
   <section id="contact" class="contact-section">
-    <div class="container-center">
+      <div class="container-center">
+          <div class="contact-grid">
 
-    </div>
+              <div class="contact-form-container">
+                  <h2 class="contact-title" id="contact-title">¿Cómo podemos ayudarte?</h2>
+                  <p class="contact-description" id="contact-description">Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.</p>
+
+                  <form action="#" method="POST" class="contact-form" id="contact-form">
+                      <div class="form-group">
+                          <label for="name" class="form-label" id="contact-name-label">Tu Nombre</label>
+                          <div class="input-with-icon">
+                              <svg class="input-icon" fill="currentColor">
+                                  <use xlink:href="/src/assets/icons/sprite.svg#icon-user"></use>
+                              </svg>
+                              <input type="text" id="name" name="name" class="form-input" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="email" class="form-label" id="contact-email-label">Tu Email</label>
+                          <div class="input-with-icon">
+                              <svg class="input-icon" fill="currentColor">
+                                  <use xlink:href="/src/assets/icons/sprite.svg#icon-email-input"></use>
+                              </svg>
+                              <input type="email" id="email" name="email" class="form-input" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="message" class="form-label" id="contact-message-label">Tu Mensaje</label>
+                          <textarea id="message" name="message" rows="4" class="form-input" placeholder="Ej: 'Hola, me gustaría agendar una demostración para mi academia...'" required></textarea>
+                      </div>
+                      <button type="submit" id="submit-button" class="btn btn-primary w-full" disabled>Enviar Mensaje</button>
+                  </form>
+
+                  <div id="success-message" class="form-message success hidden">
+                      ¡Gracias por tu mensaje! Te responderemos pronto.
+                  </div>
+                  <div id="error-message" class="form-message error hidden">
+                      Hubo un error al enviar tu mensaje. Inténtalo de nuevo.
+                  </div>
+              </div>
+
+              <div class="contact-info-container">
+                  <img src="./src/assets/images/contact-us.webp" alt="Ilustración de Contacto" class="contact-illustration">
+                  <div class="contact-details">
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-location"></use>
+                          </svg>
+                          <span>Av. Las Fresias 128, La Molina</span>
+                      </div>
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-phone"></use>
+                          </svg>
+                          <span>+51 927 230 192</span>
+                      </div>
+                      <div class="contact-detail-item">
+                          <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="1.5">
+                              <use xlink:href="/src/assets/icons/sprite.svg#icon-email"></use>
+                          </svg>
+                          <span>contact_us@demy.com</span>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
   </section>
-
 
   <section id="footer" class="footer-section">
       <div class="container-center">
@@ -908,8 +971,6 @@
           </div>
       </div>
   </section>
-
-  <script type="module" src="/src/js/main.js"></script>
 
   <div id="terms-modal" class="modal">
       <div class="modal-content">
@@ -1052,6 +1113,10 @@
           </div>
       </div>
   </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
 
   </body>
 </html>

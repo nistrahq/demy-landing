@@ -6,6 +6,15 @@
   "nav": {
     "contact": "Contáctanos"
   },
+  "contact": {
+    "title": "¿Cómo podemos ayudarte?",
+    "description": "Completa el formulario para agendar una demostración o resolver tus dudas. Nuestro equipo te contactará a la brevedad.",
+    "nameLabel": "Tu Nombre",
+    "emailLabel": "Tu Email",
+    "messageLabel": "Tu Mensaje",
+    "messagePlaceholder": "Ej: 'Hola, me gustaría agendar una demostración para mi academia...'",
+    "submitButton": "Enviar Mensaje"
+  },
   "faq": {
     "heading": "Preguntas frecuentes",
     "question_one": {

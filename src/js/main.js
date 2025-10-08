@@ -3,6 +3,7 @@ import { initializeMenuToggle } from "./modules/ui/menu-toggle.js";
 import { initializeTilt } from "./modules/ui/tilt.js";
 import { initializeModal } from "./modules/ui/modal.js";
 import { initAccordion } from "./modules/ui/accordion.js";
+import { initializeContactForm } from "./modules/ui/contact-form.js";
 import '../css/main.css'
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     initializeTilt();
     initializeModal();
     initAccordion()
+    initializeContactForm();
 })

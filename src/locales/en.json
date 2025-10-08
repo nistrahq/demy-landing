@@ -6,6 +6,15 @@
   "nav": {
     "contact": "Contact Us"
   },
+  "contact": {
+    "title": "How can we help you?",
+    "description": "Complete the form to schedule a demo or resolve any questions you may have. Our team will contact you shortly.",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "e.g., 'Hi, I'd like to schedule a demo for my academy...'",
+    "submitButton": "Send Message"
+  },
   "faq": {
     "heading": "Frequently asked questions",
     "question_one": {
