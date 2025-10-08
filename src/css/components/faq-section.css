@@ -1,0 +1,79 @@
+@layer components {
+    /* === FAQ Section === */
+    .faq-section {
+        @apply w-full relative px-6 py-16 md:py-24 bg-[var(--color-white)];
+    }
+
+    .faq-container {
+        @apply max-w-6xl mx-auto;
+    }
+
+    .faq-header {
+        @apply text-center mb-16;
+    }
+
+    .faq-subtitle {
+        @apply text-[var(--color-primary)] font-medium uppercase mb-2 tracking-wide;
+    }
+
+    .faq-title {
+        @apply font-heading text-4xl md:text-4xl font-extrabold leading-tight mb-4;
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        text-align: center;
+    }
+
+    /* === Accordion Group === */
+    .accordion-group {
+        @apply w-full flex flex-col divide-y divide-[var(--color-border)];
+    }
+
+    .accordion {
+        @apply py-6 px-4 md:px-6 bg-[var(--color-surface)] transition-colors duration-300 rounded-2xl;
+    }
+
+    .accordion:hover {
+        background-color: var(--color-bg-soft);
+    }
+
+    .accordion.active {
+        background-color: var(--color-surface-alt);
+        box-shadow: var(--shadow-md);
+    }
+
+    .accordion-toggle {
+        @apply w-full flex items-center justify-between text-left font-medium text-[var(--color-text)] transition-colors duration-300;
+    }
+
+    .accordion-toggle:hover {
+        color: var(--color-primary);
+    }
+
+    .accordion-toggle svg {
+        @apply w-5 h-5 text-[var(--color-muted)] transform transition-transform duration-300;
+    }
+
+    .accordion.active .accordion-toggle svg {
+        @apply rotate-180 text-[var(--color-primary)];
+    }
+
+    /* === Accordion Content === */
+    .accordion-content {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .accordion.active .accordion-content {
+        opacity: 1;
+        max-height: 1000px; /* fallback */
+    }
+
+    .accordion-content p {
+        @apply mt-4 text-[var(--color-muted)] leading-relaxed;
+    }
+}

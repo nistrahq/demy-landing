@@ -16,6 +16,9 @@
 @import "./components/about-the-team-section.css";
 @import "./components/pricing-section.css";
 @import "./components/contact-section.css";
+@import "./components/faq-section.css";
+@import "./components/footer-section.css";
+@import "./components/modal.css";
 /* --------------------------------------
  * Theme Configuration (Tailwind v4)
  * -------------------------------------- */

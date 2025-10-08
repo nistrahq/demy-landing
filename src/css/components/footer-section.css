@@ -1,0 +1,169 @@
+@layer components {
+
+    /* --- 1. ESTILOS DE LA SECCIÓN PRINCIPAL --- */
+    .footer-section {
+        @apply pt-10 pb-10;
+        background: var(--color-primary);
+        color: white;
+        position: relative;
+    }
+
+    /* --- 2. CONTENEDOR PRINCIPAL DEL FOOTER --- */
+    .footer-container {
+        @apply w-full max-w-6xl mx-auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* --- 3. El resto de tus estilos para el footer --- */
+    .footer-main {
+        @apply p-0;
+    }
+
+    .main-top {
+        @apply flex justify-between items-center flex-wrap gap-6 pb-8 mb-8;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .main-top {
+            @apply flex-col items-center text-center gap-8;
+        }
+
+        .logo {
+            @apply order-1;
+        }
+
+        .app-stores {
+            @apply order-2;
+        }
+    }
+
+    .logo img {
+        @apply h-9 w-auto;
+        filter: brightness(0) invert(1);
+    }
+
+    .link-column a:hover {
+        color: white;
+    }
+
+    /* --- AJUSTES PARA LOGOS DE TIENDAS --- */
+    .app-stores h4 {
+        @apply text-base font-semibold mb-4 text-white;
+    }
+
+    .app-stores {
+        @apply flex items-center gap-2;
+    }
+
+    @media (max-width: 768px) {
+        .app-stores {
+            @apply gap-4;
+        }
+
+        .app-stores a img {
+            height: 45px;
+            width: 150px;
+            object-fit: contain;
+        }
+    }
+
+    .app-stores a img {
+        height: 40px;
+        width: 135px;
+        object-fit: contain;
+    }
+
+    .main-links {
+        @apply grid grid-cols-2 md:grid-cols-4 gap-8;
+    }
+
+    .link-column h4 {
+        @apply text-base font-semibold mb-4 text-white;
+    }
+
+    .link-column ul {
+        @apply space-y-3;
+    }
+
+    .link-column a {
+        @apply text-sm;
+        color: rgba(255, 255, 255, 0.8);
+        transition: color 0.2s;
+    }
+
+    .link-column a:hover {
+        color: white;
+    }
+
+    .footer-secondary {
+        @apply flex justify-between items-center flex-wrap gap-x-8 gap-y-4 px-0 py-8 mt-8;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: var(--font-size-sm);
+    }
+
+
+    .footer-tagline {
+        @apply text-center mx-auto;
+    }
+
+    /* --- LÍNEA DIVISORIA Y SECCIÓN LEGAL --- */
+    .footer-legal {
+        @apply text-xs pt-8 text-center md:flex md:justify-between md:items-center;
+        color: rgba(255, 255, 255, 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .footer-legal {
+            @apply flex flex-col items-center gap-6;
+        }
+
+        .footer-legal p {
+            @apply order-2;
+        }
+
+        .social-icons {
+            @apply order-1;
+        }
+    }
+
+    /* --- ICONOS DE REDES SOCIALES --- */
+    .social-icons {
+        @apply flex items-center gap-4;
+    }
+    .social-icons a {
+        @apply w-6 h-6 text-white transition-colors duration-200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .social-icons a:hover {
+        color: white;
+        transform: scale(1.1);
+    }
+    .social-icons svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+    }
+
+    @media (max-width: 768px) {
+        .social-icons {
+            @apply gap-6;
+        }
+
+        .social-icons a {
+            @apply w-8 h-8;
+        }
+
+        .social-icons svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+}
