@@ -2,7 +2,7 @@
   "hero": {
     "title": "Take your academy to the next level",
     "subtitle": "Simplify your management",
-    "description": "Enroll students, organize schedules, manage payments, and more, all in one platform.."
+    "description": "Enroll students, organize schedules, manage payments and more, all in one platform."
   },
   "features_anchor": "Features",
   "how_it_works_anchor": "How it works",
@@ -12,55 +12,55 @@
   "faq_anchor": "FAQ",
   "contact_anchor": "Contact",
   "feature": {
-    "title1": "Simplify your finances like never before",
-    "description1": "Our tool is designed to maximize your financial efficiency:",
-    "item1": "Automatic calculation of APR",
-    "item2": "Clear financial reports",
-    "item3": "Control your portfolio",
-    "item4": "Optimize your finances",
-    "title2": "Take control of your cash flow",
-    "description2": "Our platform allows you to have complete clarity about every movement:",
-    "item5": "Payment tracking",
-    "item6": "Custom alerts",
-    "item7": "Real-time projections",
-    "item8": "Export reports easily"
+    "title1": "Simplify your processes like never before",
+    "description1": "Demy is designed to maximize your administrative efficiency:",
+    "item1": "Fast student enrollment",
+    "item2": "Easily organize schedules",
+    "item3": "Manage classrooms and courses",
+    "item4": "Handle teaching staff",
+    "title2": "Take control of your finances",
+    "description2": "Our platform gives you full clarity over every transaction:",
+    "item5": "Generate payment receipts",
+    "item6": "Track income and expenses",
+    "item7": "Interactive charts",
+    "item8": "Export reports in multiple formats"
   },
   "howItWorks": {
     "title": "How does it work?",
-    "description": "We show you how simple it is to start optimizing your finances",
+    "description": "Simple. Fast. Effective. Get started in just 3 steps:",
     "subtitle1": "Sign up",
-    "description1": "Create your account in minutes and access the main dashboard instantly.",
+    "description1": "Create your account in minutes and choose the plan that best suits you.",
     "subtitle2": "Add your data",
-    "description2": "Enter your financial information and account preferences.",
+    "description2": "Enter your personal and academy information.",
     "subtitle3": "View results",
-    "description3": "Get personalized reports and recommendations."
+    "description3": "Check charts and generate detailed reports instantly."
   },
   "message": {
-    "title": "Demy makes manual labor a piece of cake.",
-    "description": "Say goodbye to Excel and manual finances. It offers personalized advice and guides you toward your financial goals in a simple and secure way."
+    "title": "Demy handles repetitive tasks for you automatically",
+    "description": "Say goodbye to spreadsheets and manual work, and hello to efficiency and organization. Your academy, on autopilot."
   },
   "aboutProduct": {
-    "title": "Get to know the platform",
-    "description1": "Demy automates academic management: enrollment, scheduling, payments, and tracking.",
-    "description2": "Designed for academies that want to optimize processes without losing their pedagogical focus.",
-    "description3": "Managing your academy has never been easier. "
+    "title": "Discover the platform",
+    "description1": "Demy automates academic management: enrollments, schedules, payments, and tracking.",
+    "description2": "Designed for academies that want to optimize processes without losing their educational focus.",
+    "description3": "Managing your academy has never been this easy."
   },
   "testimonials": {
-    "title": "The best financial service of all",
-    "description": "Just like them, you too can optimize your business. Easy. In an instant.",
-    "testimony1": "“It helped me organize my personal finances in record time.”",
-    "testimony2": "“It helped me organize my personal finances in record time. Highly recommended!” I’ve never felt so productive!",
-    "testimony3": "“Not only did I understand my expenses better, I also saved more in less time.”",
-    "testimony4": "“Not only did I understand my expenses better, I also saved more in less time.”",
-    "testimony5": "“Not only did I understand my expenses better, I also saved more in less time.”",
-    "testimony6": "“Not only did I understand my expenses better, I also saved more in less time. Thanks Demy for everything!. Not only did I understand my expenses better, I also saved more in less time.” Highly recommended!"
+    "title": "The best software for academies",
+    "description": "Just like them, you too can optimize your academy. Easily and instantly.",
+    "testimony1": "“It helped me organize my academy in record time. Highly recommended!”",
+    "testimony2": "“Demy transformed the management of my educational center. Everything is now simpler and more efficient thanks to its intuitive platform.”",
+    "testimony3": "“Not only did I better understand my expenses, but I also saved more in less time.”",
+    "testimony4": "“What an amazing platform. It has made my life so much easier!”",
+    "testimony5": "“At first glance, Demy seemed too good to be true. But after using it, I can say it has exceeded all my expectations. Managing my academy has never been this efficient and simple. Even my teachers love how easy it is to use the platform. Thank you, Demy!”",
+    "testimony6": "“Demy has allowed me to focus on what really matters: my students’ education. Automating administrative tasks has been a game changer for my academy.”"
   },
   "aboutTeam": {
     "title1": "Meet the team",
-    "description1": "Professionals committed to transforming education",
+    "description1": "We are a team passionate about education and technology.",
     "title2": "Our story",
-    "description2": "At Demy, we believe that education deserves tools that are simple, powerful, and human.",
-    "description3": "Our team combines technological expertise and pedagogical commitment to help you transform your academy."
+    "description2": "At Demy, we believe education deserves simple, powerful, and human tools.",
+    "description3": "Our team combines technological expertise and educational commitment to help you transform your academy."
   },
   "contact": {
     "title": "How can we help you?",
@@ -255,7 +255,7 @@
   "see_pricing_mobile": "See Pricing",
   "pricing": {
     "title": "The perfect plan for you",
-    "description": "Optimize the management of educational and sports academies through an all-in-one platform that streamlines administration and improves operational efficiency."
+    "description": "Optimize the management of educational academies through an all-in-one platform that streamlines administration and improves operational efficiency."
   },
   "essential": {
     "title": "Essentials",
