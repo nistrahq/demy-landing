@@ -12,9 +12,15 @@
     }
 
     .about-team-title {
-        @apply leading-tight mb-6 text-center md:text-left;
-        color: var(--color-primary);
-        font-size: var(--font-size-4xl);
+        @apply leading-tight;
+        font-family: var(--font-heading);
+        background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .about-team-description {
