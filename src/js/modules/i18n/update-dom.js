@@ -270,4 +270,17 @@ export function updateTexts(data) {
     getElement("elite-features-feature_3").textContent = data.elite.features.feature_3;
     getElement("elite-features-feature_4").textContent = data.elite.features.feature_4;
     getElement("elite-get-started").textContent = data.elite.get_started;
+
+    // About the Product
+    getElement("aboutProduct-title").textContent = data.aboutProduct.title;
+    getElement("aboutProduct-description1").textContent = data.aboutProduct.description1;
+    getElement("aboutProduct-description2").textContent = data.aboutProduct.description2;
+    getElement("aboutProduct-description3").textContent = data.aboutProduct.description3;
+
+// About the TEAM
+    getElement("aboutTeam-title1").textContent = data.aboutTeam.title1;
+    getElement("aboutTeam-description1").textContent = data.aboutTeam.description1;
+    getElement("aboutTeam-title2").textContent = data.aboutTeam.title2;
+    getElement("aboutTeam-description2").textContent = data.aboutTeam.description2;
+    getElement("aboutTeam-description3").textContent = data.aboutTeam.description3;
 }
